@@ -1,5 +1,5 @@
 # Skywalker
-
+### 导入包后需要在Target - General - Frameworks, Libraries and Embedded Content添加Skywalker与SkywalkerOC
 ## 关于这个包如何最方便最方便最方便给项目使用
 ####  给Swift项目使用
 
