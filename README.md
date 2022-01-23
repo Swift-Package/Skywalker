@@ -21,7 +21,6 @@
 ```shell
 git submodule add https://github.com/GitHubyangjunyi/Skywalker.git ./Packages/Skywalker
 git commit -am '添加子模块'
-git sbumodule update --remote
 ```
 第二步提交添加子模块动作
 ```shell
@@ -29,5 +28,5 @@ git commit -am '添加子模块'
 ```
 第三步如果需要更新子模块
 ```shell
-git sbumodule update --remote
+git submodule update --remote
 ```
