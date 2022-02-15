@@ -24,7 +24,7 @@ let package = Package(
         // MARK: - 纯Swift目标
         .target(
             name: "Skywalker",
-            dependencies: []),
+            dependencies: ["SkywalkerOC"]),
         
         // MARK: - 纯Objective-C目标
         .target(

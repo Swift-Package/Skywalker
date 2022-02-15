@@ -1,22 +1,22 @@
 //
-//  GCDTimer.m
+//  SkywalkerGCDTimer.m
 //  
 //
 //  Created by 杨俊艺 on 2022/1/24.
 //
 
-#import "GCDTimer.h"
+#import "SkywalkerGCDTimer.h"
 
-@interface GCDTimer ()
+@interface SkywalkerGCDTimer ()
 
 @property (strong, nonatomic) dispatch_source_t timer;
 
 @end
 
-@implementation GCDTimer
+@implementation SkywalkerGCDTimer
 
-+ (GCDTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats queue:(dispatch_queue_t)queue block:(void (^) (void))block {
-    return [[GCDTimer alloc] initWithInterval:interval repeats:repeats queue:queue block:block];
++ (SkywalkerGCDTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats queue:(dispatch_queue_t)queue block:(void (^) (void))block {
+    return [[SkywalkerGCDTimer alloc] initWithInterval:interval repeats:repeats queue:queue block:block];
 }
 
 - (instancetype)initWithInterval:(NSTimeInterval)interval repeats:(BOOL)repeats queue:(dispatch_queue_t)queue block:(void (^) (void))block {
