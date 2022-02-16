@@ -9,12 +9,11 @@
 
 @implementation NSString (Convert)
 
-/// 十六进制的String为转换Data
+/// 十六进制的NSString为转换NSData其中字符串中的字符个数为双数
 - (NSData *)hexData {
-    // 一个16进制字符需要半个字节的空间去存储
-    unsigned char *buf = malloc(self.length / 2);
+    unsigned char *buf = malloc(self.length / 2);// 一个十六进制字符需要半个字节的空间去存储
     unsigned char *whole_byte = buf;
-    char byte_chars[3] = {'\0','\0','\0'};
+    char byte_chars[3] = {'\0', '\0', '\0'};//最后一个'\0'作为字符串结束符
     
     for (int i = 0; i < self.length / 2; i++) {
         byte_chars[0] = [self characterAtIndex:i * 2];

@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Convert)
 
-/// 十六进制的String为转换Data
+/// 十六进制的NSString为转换NSData其中字符串中的字符个数为双数
 - (NSData *)hexData;
 
 @end

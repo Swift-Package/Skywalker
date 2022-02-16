@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (float)floatValue;
 
-/// Data转换为十六进制的String
+/// NSData转换为十六进制的全小写NSString
 - (NSString *)hexString;
 
 @end

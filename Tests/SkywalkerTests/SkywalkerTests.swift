@@ -1,11 +1,14 @@
 import XCTest
-@testable import Skywalker
+@_exported @testable import Skywalker
+@_exported @testable import SkywalkerOC
 
 final class SkywalkerTests: XCTestCase {
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Skywalker().text, "Hello, World!")
+        let nsstring: NSString = NSString.init(stringLiteral: "FF")
+        let nsstringData = nsstring.hexData() as NSData
+        
+        XCTAssertEqual(nsstringData.hexString(), "ff")
+        XCTAssertEqual(nsstringData.decimalValue(), 255)
+        
     }
 }
