@@ -30,3 +30,13 @@ git commit -am '添加子模块'
 ```shell
 git submodule update --remote
 ```
+第四步如果克隆使用子模块的项目需要递归克隆或者不进行递归克隆后续手动拉取子模块
+```shell
+git clone <项目URL> --recurse-submodules
+```
+或者
+```shell
+git clone <项目URL>
+git submodule update --remote
+
+```

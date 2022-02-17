@@ -23,8 +23,7 @@
 }
 
 - (void)testExample {
-    UIImage *i = [UIImage systemImageNamed:@"cc"];
-    [i convertToGrayImage];
+    
 }
 
 - (void)testPerformanceExample {

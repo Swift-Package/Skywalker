@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Skywalker",
-    platforms: [.iOS(.v14)],
+    platforms: [.iOS(.v12)],
     products: [
         // MARK: - 纯Swift库
         .library(name: "Skywalker",targets: ["Skywalker"]),
