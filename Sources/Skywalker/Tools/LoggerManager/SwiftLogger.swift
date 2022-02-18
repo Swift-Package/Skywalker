@@ -83,38 +83,32 @@ public final class SwiftSignposter: NSObject {
         make.dateFormat = "yyyy-MM-dd' 'HH:mm:ss.SSSS"
     }
     
-    /// Get网络请求消耗衡量
+    /// Get网络请求时间消耗衡量
     /// - Parameters:
     ///   - url: 请求URL
-    ///   - time: 传入时间对象这个时间对象需要与signpostNetworkEndGetWith的一致
+    ///   - timeAndURLStamp: 传入时间对象这个时间对象需要与signpostNetworkEndGetWith的一致
     public func signpostNetworkBeginGetWith(url: String, timeAndURLStamp: NSString) {
         let signpostID = OSSignpostID.init(log: Log.network, object: timeAndURLStamp)
-        os_signpost(.begin, log: Log.network, name: "网络路标持续事件跟踪Get", signpostID: signpostID)
+        os_signpost(.begin, log: Log.network, name: "Get网络请求时间消耗衡量", signpostID: signpostID, "开始请求URL---->%{public}s", url)
     }
     
     public func signpostNetworkEndGetWith(url: String, timeAndURLStamp: NSString) {
         let signpostID = OSSignpostID.init(log: Log.network, object: timeAndURLStamp)
-        os_signpost(.end, log: Log.network, name: "网络路标持续事件跟踪Get", signpostID: signpostID, "URL---->%{public}s", url)
+        os_signpost(.end, log: Log.network, name: "Get网络请求时间消耗衡量", signpostID: signpostID, "结束请求URL---->%{public}s", url)
     }
     
-    /// Post网络请求消耗衡量
+    /// Post网络请求时间消耗衡量
     /// - Parameters:
     ///   - url: 请求URL
-    ///   - time: 传入时间对象这个时间对象需要与signpostNetworkEndGetWith的一致
-    public func signpostNetworkBeginPostWith(url: String, time: Date) {
-        let timeStr = timeFormatter.string(from: time)
-        let timeAndURLStamp = timeStr.appending(url)
-        
-        let signpostID = OSSignpostID.init(log: Log.network, object: NSString.init(string: timeAndURLStamp))
-        os_signpost(.begin, log: Log.network, name: "网络路标持续事件跟踪Post", signpostID: signpostID)
+    ///   - timeAndURLStamp: 传入时间对象这个时间对象需要与signpostNetworkEndPostWith的一致
+    public func signpostNetworkBeginPostWith(url: String, timeAndURLStamp: NSString) {
+        let signpostID = OSSignpostID.init(log: Log.network, object: timeAndURLStamp)
+        os_signpost(.begin, log: Log.network, name: "Post网络请求时间消耗衡量", signpostID: signpostID, "开始请求URL---->%{public}s", url)
     }
     
-    public func signpostNetworkEndPostWith(url: String, time: Date) {
-        let timeStr = timeFormatter.string(from: time)
-        let timeAndURLStamp = timeStr.appending(url)
-        
-        let signpostID = OSSignpostID.init(log: Log.network, object: NSString.init(string: timeAndURLStamp))
-        os_signpost(.end, log: Log.network, name: "网络路标持续事件跟踪Post", signpostID: signpostID, "URL---->%{public}s", url)
+    public func signpostNetworkEndPostWith(url: String, timeAndURLStamp: NSString) {
+        let signpostID = OSSignpostID.init(log: Log.network, object: timeAndURLStamp)
+        os_signpost(.end, log: Log.network, name: "Post网络请求时间消耗衡量", signpostID: signpostID, "结束请求URL---->%{public}s", url)
     }
     
     /// 性能路标时间消耗衡量
