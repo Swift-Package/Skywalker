@@ -7,7 +7,7 @@ final class SkywalkerTests: XCTestCase {
         let nsstring: NSString = NSString.init(stringLiteral: "FF")
         let nsstringData = nsstring.hexData() as NSData
         
-        XCTAssertEqual(nsstringData.hexString(), "ff")
+        XCTAssertEqual(nsstringData.lowercaseHexString(), "ff")
         XCTAssertEqual(nsstringData.decimalValue(), 255)
         
     }

@@ -25,7 +25,7 @@
 }
 
 /// NSData转换为十六进制的全小写NSString
-- (NSString *)hexString {
+- (NSString *)lowercaseHexString {
     Byte *bytes = (Byte *)self.bytes;
     // 下面是Byte转换为16进制
     NSString *hexStr = @"";

@@ -24,8 +24,8 @@
 
 - (void)testExample {
     NSString *str = [NSString stringWithFormat:@"FF"];
-    XCTAssertEqual(str.hexData.hexString.uppercaseString, [NSString stringWithFormat:@"FF"]);
-    XCTAssertEqual(str.hexData.hexString, [NSString stringWithFormat:@"ff"]);
+    XCTAssertEqual(str.hexData.lowercaseHexString.uppercaseString, [NSString stringWithFormat:@"FF"]);
+    XCTAssertEqual(str.hexData.lowercaseHexString, [NSString stringWithFormat:@"ff"]);
     
     XCTAssertEqual(str.hexData.decimalValue, 255);
 }
