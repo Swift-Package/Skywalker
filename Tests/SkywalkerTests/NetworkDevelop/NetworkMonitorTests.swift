@@ -18,9 +18,17 @@ class NetworkMonitorTests: XCTestCase {
     }
 
     func testExample() throws {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(showOfflineDeviceUI(notification:)), name: NSNotification.Name.connectivityStatus, object: nil)
     }
 
+    @objc func showOfflineDeviceUI(notification: Notification) {
+        if NetworkMonitor.shared.isConnected {
+            print("Connected")
+        } else {
+            print("Not connected")
+        }
+    }
+    
     func testPerformanceExample() throws {
         self.measure {
             

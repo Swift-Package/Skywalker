@@ -7,31 +7,49 @@
 
 import Network
 
+extension NWInterface.InterfaceType: CaseIterable {
+    public static var allCases: [NWInterface.InterfaceType] = [.other, .wifi, .cellular, .loopback, .wiredEthernet]
+}
+
+public extension Notification.Name {
+    static let connectivityStatus = Notification.Name(rawValue: "connectivityStatusChanged")
+}
+
 /// 网络状态监听类
-class NetworkMonitor {
-    static let shared = NetworkMonitor()
-  
-    private let monitor = NWPathMonitor()
+@objc
+public final class NetworkMonitor: NSObject {
+    public static let shared = NetworkMonitor()
+    
+    private let monitor: NWPathMonitor
     private var status = NWPath.Status.requiresConnection
+    private let queue = DispatchQueue.init(label: "NetworkConnectivityMonitor")
   
-    var isReachable: Bool {
+    public private(set) var isConnected = false
+    public private(set) var isExpensive = false
+    public private(set) var currentConnectionType: NWInterface.InterfaceType?  // 网络类型
+    
+    public var isReachable: Bool {
         status == .satisfied
     }
 
-    private init() {
-        startMonitoring()
+    private override init() {
+        monitor = NWPathMonitor.init()
+        super.init()
     }
-
-    func startMonitoring() {
-        let queue = DispatchQueue(label: "NetworkMonitor")
-        
+    
+    public func startMonitoring() {
         monitor.pathUpdateHandler = { [weak self] path in
             self?.status = path.status
+            self?.isConnected = path.status != .unsatisfied
+            self?.isExpensive = path.isExpensive
+            self?.currentConnectionType = NWInterface.InterfaceType.allCases.filter { path.usesInterfaceType($0) }.first
+            
+            NotificationCenter.default.post(name: .connectivityStatus, object: nil)
         }
         monitor.start(queue: queue)
     }
-    
-    func stopMonitoring() {
+
+    public func stopMonitoring() {
         monitor.cancel()
     }
     
