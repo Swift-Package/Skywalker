@@ -6,37 +6,27 @@
 //
 
 import os
-
-//private let subsystem = Bundle.main.bundleIdentifier!
-
-// MARK: - 日志分类
-//struct Log {
-//    #if Debug
-//    static let PointsOfInterest = OSLog.init(subsystem: subsystem, category: .pointsOfInterest)
-//    static let NetWork          = OSLog.init(subsystem: subsystem, category: "NetWork")
-//    static let MQTT             = OSLog.init(subsystem: subsystem, category: "MQTT")
-//    #elseif TestFlight
-//    static let PointsOfInterest = OSLog.init(subsystem: subsystem, category: .pointsOfInterest)
-//    static let NetWork          = OSLog.init(subsystem: subsystem, category: "NetWork")
-//    static let MQTT             = OSLog.init(subsystem: subsystem, category: "MQTT")
-//    #elseif Release
-//    static let PointsOfInterest = OSLog.disabled
-//    static let NetWork          = OSLog.disabled
-//    static let MQTT             = OSLog.disabled
-//    #endif
-//}
-
+import Foundation
 
 // MARK: - 日志分类
 private let subsystem = Bundle.main.bundleIdentifier!
 
 struct Log {
-    static let PointsOfInterest = OSLog.init(subsystem: subsystem, category: OSLog.Category.pointsOfInterest)
-    static let NetWork          = OSLog.init(subsystem: subsystem, category: "NetWork")
-    static let MQTT             = OSLog.init(subsystem: subsystem, category: "MQTT")
-    static let Bluetooth        = OSLog.init(subsystem: subsystem, category: "Bluetooth")
-    static let Performance      = OSLog.init(subsystem: subsystem, category: "Performance")
+    #if PACKAGECONFIGURATION_RELEASE
+    static let PointsOfInterest     = OSLog.disabled
+    static let NetWork              = OSLog.disabled
+    static let MQTT                 = OSLog.disabled
+    static let Bluetooth            = OSLog.disabled
+    static let Performance          = OSLog.disabled
+    static let UIViewContrllerLife  = OSLog.disabled
+    #else
+    static let PointsOfInterest     = OSLog.init(subsystem: subsystem, category: OSLog.Category.pointsOfInterest)
+    static let NetWork              = OSLog.init(subsystem: subsystem, category: "NetWork")
+    static let MQTT                 = OSLog.init(subsystem: subsystem, category: "MQTT")
+    static let Bluetooth            = OSLog.init(subsystem: subsystem, category: "Bluetooth")
+    static let Performance          = OSLog.init(subsystem: subsystem, category: "Performance")
     static let UIViewContrllerLife  = OSLog.init(subsystem: subsystem, category: "UIViewContrllerLife")
+    #endif
 }
 
 // MARK: - 日志记录工具类

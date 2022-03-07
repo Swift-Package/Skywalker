@@ -15,7 +15,7 @@ public extension Notification.Name {
     static let connectivityStatus = Notification.Name(rawValue: "connectivityStatusChanged")
 }
 
-/// 网络状态监听类
+/// 网络状态监听类 使用时在didFinishLaunchingWithOptions方法内NetworkMonitor.shared.startMonitoring()
 @objc
 public final class NetworkMonitor: NSObject {
     public static let shared = NetworkMonitor()

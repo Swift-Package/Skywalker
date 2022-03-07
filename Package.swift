@@ -14,7 +14,11 @@ let package = Package(
     dependencies: [],
     targets: [
         // MARK: - 纯Swift目标 - 依赖纯Objective-C目标以复用Objective-C代码
-        .target(name: "Skywalker", dependencies: ["SkywalkerOC"]),
+        .target(name: "Skywalker", dependencies: ["SkywalkerOC"],
+                swiftSettings: [
+                    .define("PACKAGECONFIGURATION_DEBUG", .when(platforms: nil, configuration: .debug)),
+                    .define("PACKAGECONFIGURATION_RELEASE", .when(platforms: nil, configuration: .release)),
+                ]),
         
         // MARK: - 纯Objective-C目标
         .target(name: "SkywalkerOC", dependencies: [], path: "Sources/SkywalkerOC", publicHeadersPath: ""),
