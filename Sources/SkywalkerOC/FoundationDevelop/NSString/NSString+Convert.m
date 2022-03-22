@@ -6,6 +6,7 @@
 //
 
 #import "NSString+Convert.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @implementation NSString (Convert)
 
@@ -25,6 +26,51 @@
     NSData *data = [NSData dataWithBytes:buf length:self.length / 2];
     free(buf);
     return data;
+}
+
+/// 转换成MD5字符串不可逆
+- (NSString *)md5String {
+    const char *cStr = [self UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(cStr, (unsigned int)strlen(cStr), result);
+    
+    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH];
+    for (NSInteger i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [ret appendFormat:@"%02x", result[i]];
+    }
+    return ret;
+}
+
+/// 转换成Base64编码格式
+- (NSString *)base64String {
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *base64Str = [data base64EncodedStringWithOptions:0];
+    return base64Str;
+}
+
+/// Base64编码格式还原
+- (NSString *)base64ToOriginal {
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:self options:0];
+    
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
++ (NSString *)jsonStringFromData:(NSData *)data {
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+- (NSDictionary *)jsonToDictionary {
+    if (self == nil) {
+        return nil;
+    }
+    
+    NSError *error;
+    NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (error) {
+        return nil;
+    }
+    return dictionary;
 }
 
 @end

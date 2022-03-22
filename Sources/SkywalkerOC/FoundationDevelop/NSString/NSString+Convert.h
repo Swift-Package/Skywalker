@@ -14,6 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// 十六进制的NSString为转换NSData其中字符串中的字符个数为双数
 - (NSData *)hexData;
 
+/// 转换成MD5字符串不可逆
+- (NSString *)md5String;
+
+/// 转换成Base64编码格式
+- (NSString *)base64String;
+
+/// Base64编码格式还原
+- (NSString *)base64ToOriginal;
+
++ (NSString *)jsonStringFromData:(NSData *)data;
+
+- (NSDictionary *)jsonToDictionary;
+
 @end
 
 NS_ASSUME_NONNULL_END

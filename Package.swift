@@ -16,19 +16,34 @@ let package = Package(
         // MARK: - 纯Swift目标 - 依赖纯Objective-C目标以复用Objective-C代码
         .target(name: "Skywalker", dependencies: ["SkywalkerOC"],
                 exclude: [],
-                resources: [],
+                resources: [
+                    .copy("FoundationDevelop/Bundle/Projects.json")
+                ],
                 swiftSettings: [
                     .define("PACKAGECONFIGURATION_DEBUG", .when(platforms: nil, configuration: .debug)),
                     .define("PACKAGECONFIGURATION_RELEASE", .when(platforms: nil, configuration: .release)),
                 ]),
         
         // MARK: - 纯Objective-C目标
-        .target(name: "SkywalkerOC", dependencies: [], path: "Sources/SkywalkerOC", publicHeadersPath: ""),
+        .target(name: "SkywalkerOC", dependencies: [], path: "Sources/SkywalkerOC",
+                exclude: [],
+                resources: [],
+                publicHeadersPath: "",
+                cSettings: []),
         
         // MARK: - 纯Swift测试目标用来测试两个库
-        .testTarget(name: "SkywalkerTests", dependencies: ["Skywalker"]),
+        .testTarget(name: "SkywalkerTests", dependencies: ["Skywalker"],
+                    exclude: [],
+                    resources: [
+                        .copy("FoundationDevelop/Bundle/Projects.json"),
+                        .copy("FoundationDevelop/Bundle/WeatherbitExample.json"),
+                   ],
+                   swiftSettings: []),
         
         // MARK: - 纯Objective-C测试目标用来测试两个库
-        .testTarget(name: "SkywalkerOCTests", dependencies: ["Skywalker", "SkywalkerOC"]),
+        .testTarget(name: "SkywalkerOCTests", dependencies: ["Skywalker", "SkywalkerOC"],
+                    exclude: [],
+                    resources: [],
+                    cSettings: []),
     ]
 )
