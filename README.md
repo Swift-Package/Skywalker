@@ -37,6 +37,7 @@ git clone <项目URL> --recurse-submodules
 或者
 ```shell
 git clone <项目URL>
+git submodule update --init
 git submodule update --remote
 
 ```

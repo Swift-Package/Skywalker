@@ -19,6 +19,10 @@ public extension UITableViewCell {
     static var nibName: String {
         return String.init(describing: self)
     }
+    
+    static func nib() -> UINib {
+        return UINib.init(nibName: self.nibName, bundle: nil)
+    }
 }
 
 #endif

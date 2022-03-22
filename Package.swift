@@ -15,6 +15,8 @@ let package = Package(
     targets: [
         // MARK: - 纯Swift目标 - 依赖纯Objective-C目标以复用Objective-C代码
         .target(name: "Skywalker", dependencies: ["SkywalkerOC"],
+                exclude: [],
+                resources: [],
                 swiftSettings: [
                     .define("PACKAGECONFIGURATION_DEBUG", .when(platforms: nil, configuration: .debug)),
                     .define("PACKAGECONFIGURATION_RELEASE", .when(platforms: nil, configuration: .release)),
