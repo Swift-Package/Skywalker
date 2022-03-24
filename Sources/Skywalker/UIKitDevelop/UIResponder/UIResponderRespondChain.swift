@@ -5,10 +5,10 @@
 //  Created by 杨俊艺 on 2022/3/13.
 //
 
-import Foundation
 import UIKit
 
 extension UIResponder {
+    
     private struct Static {
         static weak var responder: UIResponder?
     }
@@ -24,4 +24,5 @@ extension UIResponder {
     @objc private func _trap() {
         Static.responder = self
     }
+    
 }
