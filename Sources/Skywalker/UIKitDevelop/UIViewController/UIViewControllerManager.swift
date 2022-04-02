@@ -7,7 +7,7 @@
 
 import UIKit
 
-@objc
+@objcMembers
 public class UIViewControllerManager: NSObject {
     public static let manager = UIViewControllerManager.init()
     
