@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Skywalker",
+    defaultLocalization: "zh",
     platforms: [.iOS(.v12)],
     products: [
         // MARK: - 纯Swift库

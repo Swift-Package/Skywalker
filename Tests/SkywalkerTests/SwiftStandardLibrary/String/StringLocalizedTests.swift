@@ -18,13 +18,12 @@ class StringLocalizedTests: XCTestCase {
     }
     
     func testExample() throws {
+        // ⚠️这个包的默认语言是zh但是Scheme的Test动作是Debug配置Options的App Language为System Language是英语
+        XCTAssertEqual("Roll".localized(), "Roll")
         
+        XCTAssertEqual("摇晃".localized(), "Roll")
         
-        
-        
-        
-        
-        
+//        XCTAssertEqual("摇晃".localized(), "摇晃晃")// 测试App Language为中文的情况下
     }
 
 }
