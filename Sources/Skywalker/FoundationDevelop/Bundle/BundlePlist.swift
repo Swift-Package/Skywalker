@@ -14,7 +14,7 @@ public func infoForKey(_ key: String) -> String? {
  }
 
 /// 用来读取Plist字典文件
-enum PlistConfig {
+public enum PlistConfig {
     static func stringValue(forKey key: String) -> String {
         guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String else { fatalError("Invalid value or undefined key") }
         return value
@@ -22,13 +22,13 @@ enum PlistConfig {
 }
 
 // let url = URL(string: path, relativeTo: API.baseURL)!
-enum API {
+public enum API {
     static var baseURL: URL {
         return try! URL(string: "https://" + XcodeConfiguration.value(for: "API_BASE_URL"))!
     }
 }
 
-enum XcodeConfiguration {
+public enum XcodeConfiguration {
     enum Error: Swift.Error {
         case missingKey, invalidValue
     }
@@ -48,4 +48,3 @@ enum XcodeConfiguration {
     }
     
 }
-

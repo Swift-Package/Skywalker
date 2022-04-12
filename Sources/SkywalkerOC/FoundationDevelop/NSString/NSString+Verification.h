@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Verification)
 
+/// 是否是空字符串或者是空白字符组成的字符串
+- (BOOL)isBlank;
+
 @end
 
 NS_ASSUME_NONNULL_END

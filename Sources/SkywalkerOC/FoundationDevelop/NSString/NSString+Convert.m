@@ -32,8 +32,10 @@
 - (NSString *)md5String {
     const char *cStr = [self UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     CC_MD5(cStr, (unsigned int)strlen(cStr), result);
-    
+#pragma clang diagnostic pop
     NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH];
     for (NSInteger i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
         [ret appendFormat:@"%02x", result[i]];

@@ -8,7 +8,6 @@
 import Foundation
 import Network
 
-@available(iOS 13.0, *)
 public class NetworkMonitorForSwiftUI: ObservableObject {
     static let shared = NetworkMonitorForSwiftUI()
     
@@ -36,7 +35,5 @@ public class NetworkMonitorForSwiftUI: ObservableObject {
     public func stop() {
         monitor.cancel()
     }
-    
-    
     
 }

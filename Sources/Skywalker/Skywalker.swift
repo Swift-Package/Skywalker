@@ -3,8 +3,9 @@
 @_exported import WebKit
 
 public struct Skywalker {
+    
     public private(set) var text = "Hello, World!"
 
-    public init() {
-    }
+    public init() {}
+    
 }

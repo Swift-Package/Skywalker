@@ -1,11 +1,11 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.6
 
 import PackageDescription
 
 let package = Package(
     name: "Skywalker",
     defaultLocalization: "zh",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v13)],
     products: [
         // MARK: - 纯Swift库
         .library(name: "Skywalker",targets: ["Skywalker"]),
@@ -23,6 +23,7 @@ let package = Package(
                 swiftSettings: [
                     .define("PACKAGECONFIGURATION_DEBUG", .when(platforms: nil, configuration: .debug)),
                     .define("PACKAGECONFIGURATION_RELEASE", .when(platforms: nil, configuration: .release)),
+                    //.unsafeFlags(["-suppress-warnings"]),// 压制编译警告
                 ]),
         
         // MARK: - 纯Objective-C目标
@@ -31,6 +32,7 @@ let package = Package(
                 resources: [],
                 publicHeadersPath: "",
                 cSettings: []),
+                //cSettings: [.unsafeFlags(["-w"])]), // 压制所有编译警告
         
         // MARK: - 纯Swift测试目标用来测试两个库
         .testTarget(name: "SkywalkerTests", dependencies: ["Skywalker"],

@@ -11,4 +11,9 @@
 
 @implementation NSString (Verification)
 
+/// 是否是空字符串或者是空白字符组成的字符串
+- (BOOL)isBlank {
+    return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0;
+}
+
 @end

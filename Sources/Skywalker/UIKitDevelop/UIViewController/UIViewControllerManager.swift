@@ -12,7 +12,6 @@ public class UIViewControllerManager: NSObject {
     public static let manager = UIViewControllerManager.init()
     
     /// 获取根视图控制器
-    @available(iOS 13.0, *)
     public func getRootViewController() -> UIViewController {
         return (UIApplication.shared.connectedScenes
                     .compactMap { $0 as? UIWindowScene } // 只取出能转换成非空UIWindowScene对象组成一个数组
@@ -21,7 +20,6 @@ public class UIViewControllerManager: NSObject {
     }
     
     /// 获取当前标签栏视图控制器
-    @available(iOS 13.0, *)
     public func getCurrentTabBarController() -> UITabBarController? {
         if let tabBarVC = getRootViewController() as? UITabBarController {
             return tabBarVC
@@ -32,7 +30,6 @@ public class UIViewControllerManager: NSObject {
     
     /// 获取当前导航视图控制器
     /// - Returns: 当前导航视图控制器
-    @available(iOS 13.0, *)
     public func getCurrentNavigationViewController() -> UINavigationController? {
         guard let currentNavigationController = matchNavigationController(with: getRootViewController()) else { return nil }
         return currentNavigationController
@@ -59,7 +56,6 @@ public class UIViewControllerManager: NSObject {
     }
     
     /// 获取当前视图控制器
-    @available(iOS 13.0, *)
     public func getCurrentViewController() -> UIViewController {
         return getTopViewController(with: getRootViewController())
     }
@@ -78,4 +74,3 @@ public class UIViewControllerManager: NSObject {
     }
     
 }
-
