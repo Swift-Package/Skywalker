@@ -12,21 +12,21 @@ import Foundation
 private let subsystem = Bundle.main.bundleIdentifier!
 
 struct Log {
-    #if PACKAGECONFIGURATION_RELEASE
-    static let PointsOfInterest     = OSLog.disabled
-    static let NetWork              = OSLog.disabled
-    static let MQTT                 = OSLog.disabled
-    static let Bluetooth            = OSLog.disabled
-    static let Performance          = OSLog.disabled
-    static let UIViewContrllerLife  = OSLog.disabled
-    #else
+//    #if PACKAGECONFIGURATION_RELEASE
+//    static let PointsOfInterest     = OSLog.disabled
+//    static let NetWork              = OSLog.disabled
+//    static let MQTT                 = OSLog.disabled
+//    static let Bluetooth            = OSLog.disabled
+//    static let Performance          = OSLog.disabled
+//    static let UIViewContrllerLife  = OSLog.disabled
+//    #else
     static let PointsOfInterest     = OSLog.init(subsystem: subsystem, category: OSLog.Category.pointsOfInterest)
     static let NetWork              = OSLog.init(subsystem: subsystem, category: "NetWork")
     static let MQTT                 = OSLog.init(subsystem: subsystem, category: "MQTT")
     static let Bluetooth            = OSLog.init(subsystem: subsystem, category: "Bluetooth")
     static let Performance          = OSLog.init(subsystem: subsystem, category: "Performance")
     static let UIViewContrllerLife  = OSLog.init(subsystem: subsystem, category: "UIViewContrllerLife")
-    #endif
+//    #endif
 }
 
 // MARK: - 日志记录工具类
