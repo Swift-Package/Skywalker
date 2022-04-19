@@ -6,25 +6,12 @@
 //
 
 import XCTest
+@testable import Skywalker
 
 class UIDeviceTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-
     func testExample() throws {
         XCTAssertFalse(UIDevice.isIPad())
-    }
-
-    func testPerformanceExample() throws {
-        self.measure {
-            
-        }
     }
 
 }

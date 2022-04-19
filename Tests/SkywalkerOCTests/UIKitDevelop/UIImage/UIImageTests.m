@@ -14,14 +14,6 @@
 
 @implementation UIImageTests
 
-- (void)setUp {
-    
-}
-
-- (void)tearDown {
-    
-}
-
 - (void)testExample {
     
 }

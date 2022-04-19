@@ -6,6 +6,8 @@
 //
 
 import XCTest
+@testable import Skywalker
+@testable import SkywalkerOC
 
 struct Project: Codable {
     var number: Int
@@ -27,15 +29,6 @@ struct Project: Codable {
 
 
 class BundleDecodeTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-
     func testExample() throws {
         // ⚠️执行该测试时需要将扩展的Bundle.main改成Bundle.module
 //        let projects = Bundle.decode([Project].self, from: "Projects.json")

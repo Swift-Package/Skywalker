@@ -14,23 +14,9 @@
 
 @implementation UIButtonTests
 
-- (void)setUp {
-    
-}
-
-- (void)tearDown {
-    
-}
-
 - (void)testExample {
     UIButton *b = [[UIButton alloc] init];
     b.isNeedDelay = YES;
-}
-
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-        
-    }];
 }
 
 @end

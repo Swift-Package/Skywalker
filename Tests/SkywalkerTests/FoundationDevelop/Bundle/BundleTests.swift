@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Skywalker
 
 class BundleTests: XCTestCase {
 
@@ -18,10 +19,6 @@ class BundleTests: XCTestCase {
     var exampleJSONData: Data!
     var weather: WeatherbitData!
     
-    override class func setUp() {
-        
-    }
-    
     override func setUpWithError() throws {
 //        let bundle = Bundle(for: type(of: self))
         let url = Bundle.module.url(forResource: "WeatherbitExample", withExtension: "json")!
@@ -30,11 +27,7 @@ class BundleTests: XCTestCase {
         let decoder = JSONDecoder()
         weather = try! decoder.decode(WeatherbitData.self, from: exampleJSONData)
     }
-
-    override func tearDownWithError() throws {
-        
-    }
-
+    
     func testExample() throws {
         XCTAssertEqual(weather.currentTemp, 24.19)
         

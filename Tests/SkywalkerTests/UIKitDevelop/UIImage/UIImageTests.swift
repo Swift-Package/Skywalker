@@ -6,29 +6,15 @@
 //
 
 import XCTest
-import SkywalkerOC
+@testable import Skywalker
+@testable import SkywalkerOC
 
 class UIImageTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-
+    
     func testExample() throws {
         let ii = UIImage.init()
         ii.convertToGray()
         ii.color(atPixel: CGPoint.zero)
-        
-    }
-
-    func testPerformanceExample() throws {
-        self.measure {
-            
-        }
     }
 
 }

@@ -14,14 +14,6 @@
 
 @implementation NSDataTests
 
-- (void)setUp {
-    
-}
-
-- (void)tearDown {
-    
-}
-
 - (void)testExample {
     NSString *str = [NSString stringWithFormat:@"FF"];
     XCTAssertEqual(str.hexData.lowercaseHexString.uppercaseString, [NSString stringWithFormat:@"FF"]);

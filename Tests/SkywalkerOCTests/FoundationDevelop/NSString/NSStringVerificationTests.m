@@ -14,14 +14,6 @@
 
 @implementation NSStringVerificationTests
 
-- (void)setUp {
-    
-}
-
-- (void)tearDown {
-    
-}
-
 - (void)testExample {
     XCTAssertEqual(@"".isBlank, YES);
     XCTAssertEqual(@" ".isBlank, YES);

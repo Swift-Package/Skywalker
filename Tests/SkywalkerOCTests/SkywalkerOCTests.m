@@ -6,7 +6,6 @@
 //
 
 #import <XCTest/XCTest.h>
-@import Skywalker;
 @import SkywalkerOC;
 
 @interface SkywalkerOCTests : XCTestCase

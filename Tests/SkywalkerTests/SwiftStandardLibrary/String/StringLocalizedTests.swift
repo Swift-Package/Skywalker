@@ -6,16 +6,9 @@
 //
 
 import XCTest
+@testable import Skywalker
 
 class StringLocalizedTests: XCTestCase {
-    
-    override func setUpWithError() throws {
-        
-    }
-    
-    override func tearDownWithError() throws {
-        
-    }
     
     func testExample() throws {
         // ⚠️这个包的默认语言是zh但是Scheme的Test动作是Debug配置Options的App Language为System Language是英语

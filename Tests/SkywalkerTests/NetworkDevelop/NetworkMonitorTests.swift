@@ -6,16 +6,9 @@
 //
 
 import XCTest
+@testable import Skywalker
 
 class NetworkMonitorTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
 
     func testExample() throws {
         NotificationCenter.default.addObserver(self, selector: #selector(showOfflineDeviceUI(notification:)), name: NSNotification.Name.connectivityStatus, object: nil)
@@ -29,10 +22,4 @@ class NetworkMonitorTests: XCTestCase {
         }
     }
     
-    func testPerformanceExample() throws {
-        self.measure {
-            
-        }
-    }
-
 }

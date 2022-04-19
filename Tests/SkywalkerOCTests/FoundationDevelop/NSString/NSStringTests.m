@@ -14,14 +14,6 @@
 
 @implementation NSStringTests
 
-- (void)setUp {
-    
-}
-
-- (void)tearDown {
-    
-}
-
 - (void)testExample {
     NSString *str = [NSString stringWithFormat:@"FF"];
     XCTAssertEqual(str.hexData.decimalValue, 255);

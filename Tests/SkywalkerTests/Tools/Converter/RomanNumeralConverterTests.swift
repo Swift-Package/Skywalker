@@ -12,14 +12,6 @@ class RomanNumeralConverterTests: XCTestCase {
 
     let converter = RomanNumeralConverter.init()
     
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-
     func testExample() throws {
         let result = converter.convert(1)
         XCTAssertEqual (result, "I" , "转换1为罗马数字失败" )
@@ -71,12 +63,5 @@ class RomanNumeralConverterTests: XCTestCase {
       let result = converter.convert(3999)
       XCTAssertEqual(result, "MMMCMXCIX", "转换3999为罗马数字失败")
     }
-
     
-    func testPerformanceExample() throws {
-        self.measure {
-            
-        }
-    }
-
 }

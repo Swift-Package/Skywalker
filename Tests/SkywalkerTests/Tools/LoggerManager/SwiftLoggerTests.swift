@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import Skywalker
 
 class SwiftLoggerTests: XCTestCase {
 
@@ -13,14 +14,6 @@ class SwiftLoggerTests: XCTestCase {
         make.dateFormat = "yyyy-MM-dd' 'HH:mm:ss.SSSS"
     }
     
-    override func setUpWithError() throws {
-        
-    }
-
-    override func tearDownWithError() throws {
-        
-    }
-
     func testExample() throws {
         
     }

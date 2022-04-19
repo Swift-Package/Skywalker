@@ -48,5 +48,3 @@ var isLoggedIn: Bool {
         UserDefaults.standard.set(newValue, forKey: "LOGGED_IN")
     }
 }
-
-

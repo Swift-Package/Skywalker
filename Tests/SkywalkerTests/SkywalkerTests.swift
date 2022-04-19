@@ -1,6 +1,6 @@
 import XCTest
-@_exported @testable import Skywalker
-@_exported @testable import SkywalkerOC
+@testable import Skywalker
+@testable import SkywalkerOC
 
 final class SkywalkerTests: XCTestCase {
     func testExample() throws {
