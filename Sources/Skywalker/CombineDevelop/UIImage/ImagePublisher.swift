@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import UIKit
-import Combine
 
 public protocol ImagePublisher {
     func imagePublisher() -> AnyPublisher<UIImage?, Never>
