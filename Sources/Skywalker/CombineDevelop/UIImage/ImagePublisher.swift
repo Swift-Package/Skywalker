@@ -5,7 +5,8 @@
 //  Created by 杨俊艺 on 2022/4/19.
 //
 
-import Foundation
+import UIKit
+import Combine
 
 public protocol ImagePublisher {
     func imagePublisher() -> AnyPublisher<UIImage?, Never>

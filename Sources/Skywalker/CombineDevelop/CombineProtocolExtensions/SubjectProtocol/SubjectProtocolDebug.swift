@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 public extension Subject where Output == String {
     

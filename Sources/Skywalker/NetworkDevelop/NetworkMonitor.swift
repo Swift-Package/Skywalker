@@ -5,6 +5,7 @@
 //  Created by 杨俊艺 on 2022/2/22.
 //
 
+import Foundation
 import Network
 
 extension NWInterface.InterfaceType: CaseIterable {

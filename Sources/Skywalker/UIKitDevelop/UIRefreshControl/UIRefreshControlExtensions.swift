@@ -5,7 +5,7 @@
 //  Created by 杨俊艺 on 2022/2/17.
 //
 
-import Foundation
+import UIKit
 
 @objc
 public extension UIRefreshControl {

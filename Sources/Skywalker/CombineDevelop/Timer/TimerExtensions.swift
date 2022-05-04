@@ -5,7 +5,8 @@
 //  Created by 杨俊艺 on 2022/4/19.
 //
 
-import Foundation
+import UIKit
+import Combine
 
 public extension Timer {
     static func loop(every interval: TimeInterval, over total: Int) -> AnyPublisher<Int, Never> {
