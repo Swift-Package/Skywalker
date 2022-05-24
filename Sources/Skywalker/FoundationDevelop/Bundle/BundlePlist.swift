@@ -13,7 +13,7 @@ public func infoForKey(_ key: String) -> String? {
     return (Bundle.main.infoDictionary?[key] as? String)?.replacingOccurrences(of: "\\", with: "")
  }
 
-/// 用来读取Plist字典文件
+/// 用来读取工程中的Info.Plist字典文件
 public enum PlistConfig {
     static func stringValue(forKey key: String) -> String {
         guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String else { fatalError("Invalid value or undefined key") }
