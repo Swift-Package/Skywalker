@@ -38,7 +38,6 @@ let package = Package(
         .testTarget(name: "SkywalkerTests", dependencies: ["Skywalker"],
                     exclude: [],
                     resources: [
-                        .copy("FoundationDevelop/Bundle/Projects.json"),
                         .copy("FoundationDevelop/Bundle/WeatherbitExample.json"),
                    ],
                    swiftSettings: []),

@@ -48,3 +48,17 @@ public enum XcodeConfiguration {
     }
     
 }
+
+//func getDataFromInfoPlist(){
+//    if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
+//       let infoListValue = NSDictionary(contentsOfFile: path)
+//        do {
+//            let JsonData = try JSONSerialization.data(withJSONObject: infoListValue as Any, options: .prettyPrinted)
+//            let val = NSString(data: JsonData, encoding: String.Encoding.utf8.rawValue)! as String
+//            print(val)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//
+//    }
+//}

@@ -8,6 +8,7 @@
 import XCTest
 @testable import Skywalker
 
+/// 仅仅用来测试使用Bundle.module访问当前模块资源文件进行解码的操作
 class BundleTests: XCTestCase {
 
     private static let dateFormatter: DateFormatter = {
@@ -21,7 +22,7 @@ class BundleTests: XCTestCase {
     
     override func setUpWithError() throws {
 //        let bundle = Bundle(for: type(of: self))
-        let url = Bundle.module.url(forResource: "WeatherbitExample", withExtension: "json")!
+        let url = Bundle.module.url(forResource: "WeatherbitExample", withExtension: "json")!// 访问到当前测试目标内的WeatherbitExample.json文件
         exampleJSONData = try! Data(contentsOf: url)
       
         let decoder = JSONDecoder()
