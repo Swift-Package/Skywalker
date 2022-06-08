@@ -24,7 +24,7 @@ class BundleTests: XCTestCase {
 //        let bundle = Bundle(for: type(of: self))
         let url = Bundle.module.url(forResource: "WeatherbitExample", withExtension: "json")!// 访问到当前测试目标内的WeatherbitExample.json文件
         exampleJSONData = try! Data(contentsOf: url)
-      
+        
         let decoder = JSONDecoder()
         weather = try! decoder.decode(WeatherbitData.self, from: exampleJSONData)
     }
@@ -40,7 +40,7 @@ class BundleTests: XCTestCase {
         XCTAssertEqual(Self.dateFormatter.string(from: weather.date), "08-28-2017")
         
     }
-
+    
 }
 
 // https://openweathermap.org/current#current_JSON
@@ -52,37 +52,37 @@ struct WeatherbitData: Decodable {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-  
+    
     enum CodingKeys: String, CodingKey {
         case observation = "data"
     }
-  
+    
     let observation: [Observation]
     
     struct Observation: Decodable {
         let temp: Double
         let datetime: String
-    
+        
         let weather: Weather
-    
+        
         struct Weather: Decodable {
             let icon: String
             let description: String
         }
     }
-  
+    
     var currentTemp: Double {
         observation[0].temp
     }
-  
+    
     var iconName: String {
         observation[0].weather.icon
     }
-  
+    
     var description: String {
         observation[0].weather.description
     }
-  
+    
     var date: Date {
         let dateString = String(observation[0].datetime.prefix(10))
         return Self.dateFormatter.date(from: dateString) ?? Date()
