@@ -24,7 +24,9 @@ let package = Package(
                     .define("PACKAGECONFIGURATION_DEBUG", .when(platforms: nil, configuration: .debug)),
                     .define("PACKAGECONFIGURATION_RELEASE", .when(platforms: nil, configuration: .release)),
                     //.unsafeFlags(["-suppress-warnings"]),// 压制编译警告
-                ]),
+                ]
+                //linkerSettings: [.linkedFramework("CFNetwork", .when(platforms: [.iOS], configuration: nil))]
+               ),
         
         // MARK: - 纯Objective-C目标
         .target(name: "SkywalkerOC", dependencies: [], path: "Sources/SkywalkerOC",

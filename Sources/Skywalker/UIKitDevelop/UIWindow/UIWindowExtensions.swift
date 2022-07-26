@@ -7,7 +7,9 @@
 
 import UIKit
 
+@objc
 public extension UIWindow {
+    
     var visibleViewController: UIViewController? {
         return UIWindow.getVisibleViewControllerFrom(self.rootViewController)
     }
@@ -24,5 +26,14 @@ public extension UIWindow {
                 return vc
             }
         }
+    }
+    
+    var keyWindow: UIWindow? {
+        UIApplication.shared
+            .connectedScenes
+            .filter({$0.activationState == .foregroundActive})
+            .compactMap({$0 as? UIWindowScene})
+            .first?.windows
+            .filter({$0.isKeyWindow}).first
     }
 }
