@@ -9,7 +9,7 @@ import UIKit
 
 @objcMembers
 public class UIViewControllerManager: NSObject {
-    public static let manager = UIViewControllerManager.init()
+    public static let shared = UIViewControllerManager.init()
     
     /// 获取根视图控制器
     public func getRootViewController() -> UIViewController {
