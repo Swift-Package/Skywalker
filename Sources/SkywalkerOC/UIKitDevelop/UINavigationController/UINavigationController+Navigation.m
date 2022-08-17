@@ -9,7 +9,7 @@
 
 @implementation UINavigationController (Navigation)
 
-- (void)popTo:(NSString *)viewControllerClassName {
+- (void)popToTarget:(NSString *)viewControllerClassName {
     NSArray *controllers = self.viewControllers;
     for (int i = 0; i < controllers.count; i++) {
          if ([controllers[i] isKindOfClass:NSClassFromString(viewControllerClassName)]) {

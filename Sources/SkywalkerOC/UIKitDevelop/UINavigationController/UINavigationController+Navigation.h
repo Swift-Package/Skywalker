@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UINavigationController (Navigation)
 
-- (void)popTo:(NSString *)viewControllerClassName;
+- (void)popToTarget:(NSString *)viewControllerClassName;
 
 @end
 
