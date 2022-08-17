@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UINavigationController (Navigation)
+@interface UINavigationController (NavigationExtension)
 
 - (void)popToTarget:(NSString *)viewControllerClassName;
 

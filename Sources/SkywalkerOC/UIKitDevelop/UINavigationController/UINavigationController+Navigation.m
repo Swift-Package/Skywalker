@@ -7,7 +7,7 @@
 
 #import "UINavigationController+Navigation.h"
 
-@implementation UINavigationController (Navigation)
+@implementation UINavigationController (NavigationExtension)
 
 - (void)popToTarget:(NSString *)viewControllerClassName {
     NSArray *controllers = self.viewControllers;
