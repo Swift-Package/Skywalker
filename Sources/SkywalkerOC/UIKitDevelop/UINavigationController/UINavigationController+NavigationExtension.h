@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)popToTarget:(NSString *)viewControllerClassName;
 
+- (void)filterTargetViewControllers:(NSArray<Class> *)classList;
+
 @end
 
 NS_ASSUME_NONNULL_END

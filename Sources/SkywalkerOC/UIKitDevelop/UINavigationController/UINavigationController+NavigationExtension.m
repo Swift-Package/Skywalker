@@ -19,4 +19,21 @@
     }
 }
 
+- (void)filterTargetViewControllers:(NSArray<Class> *)classList {
+    NSMutableArray *childs = [NSMutableArray arrayWithArray:self.childViewControllers];
+    
+    UIViewController *lastController = childs.lastObject;
+    [childs removeLastObject];
+    
+    [childs filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL (UIViewController *evaluatedObject, NSDictionary<NSString *, id> *_Nullable bindings) {
+        Class class = evaluatedObject.class;
+        BOOL flag = [classList containsObject:class];
+        return !flag;
+    }]];
+    
+    [childs addObject:lastController];
+    
+    [self setViewControllers:childs animated:NO];
+}
+
 @end
