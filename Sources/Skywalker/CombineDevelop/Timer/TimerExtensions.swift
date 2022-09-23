@@ -22,7 +22,7 @@ public extension Timer {
 
 let array: [ImagePublisher] = ["some", UIColor.white]
 
-//Timer.loop(every: 4, over: array.count)
+// Timer.loop(every: 4, over: array.count)
 //    .flatMap { array[$0].imagePublisher() }
 //    .assign(to: \.image, on: UIImageView.init())
 //    .store(in: &cancellables)

@@ -14,10 +14,10 @@ public extension UIApplication {
     func clearLaunchScreenCache() {
         do {
             try FileManager.default.removeItem(atPath: NSHomeDirectory() + "/Library/SplashBoard")
+            print("Skywalker 清除启动页缓存成功")
         } catch {
-            print("Skywalker->清除启动页缓存失败")
+            print("Skywalker 清除启动页缓存失败")
         }
     }
-    
     
 }

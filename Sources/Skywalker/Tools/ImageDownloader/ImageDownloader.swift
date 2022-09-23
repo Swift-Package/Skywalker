@@ -41,6 +41,6 @@ public class ImageDownloader {
     
 }
 
-//ImageDownloader.shared.downloadImage(forURL: url) { [weak self] result in
+// ImageDownloader.shared.downloadImage(forURL: url) { [weak self] result in
 //    guard let self = self, let image = try? result.get() else { return }
-//}
+// }

@@ -31,7 +31,6 @@
 
 - (void)filterTargetViewControllers:(NSArray<Class> *)classList {
     NSMutableArray *childs = [NSMutableArray arrayWithArray:self.childViewControllers];
-    
     UIViewController *lastController = childs.lastObject;
     [childs removeLastObject];
     

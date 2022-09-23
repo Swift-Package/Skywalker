@@ -24,7 +24,6 @@ extension URL: ImagePublisher {
     }
 }
 
-
 extension String: ImagePublisher {
     /// 通过字符串生成图片发布者
     /// - Returns: 图片发布者 "name".imagePublisher().assign(to: \.image, on: UIImageView.init()).store(in: &cancellables)
@@ -52,4 +51,3 @@ extension UIColor: ImagePublisher {
         .receive(on: RunLoop.main).eraseToAnyPublisher()
     }
 }
-

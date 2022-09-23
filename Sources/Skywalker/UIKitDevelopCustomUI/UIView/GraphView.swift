@@ -82,18 +82,16 @@ public class GraphView: UIView {
         UIColor.white.setStroke()
         context.saveGState() //保存当前未裁剪的上下文状态防止下一步裁剪了导致数据点绘制出现不完整 - 可以注释掉context.saveGState()和context.restoreGState()查看绘制数据点被裁剪的奇怪状态
         
-        
         // MARK: - 为折线图下方添加渐变
         guard let clippingPath = graphPath.copy() as? UIBezierPath else { return }
         clippingPath.addLine(to: CGPoint.init(x: columXPoint(graphPoints.count - 1), y: height))// 添加到右下角的路径
         clippingPath.addLine(to: CGPoint.init(x: columXPoint(0), y: height))// 添加到左下角的路径
         clippingPath.close()// 关闭两个端点
         clippingPath.addClip() // 将剪切路径添加到上下文,表示只填充裁剪路径包含的内容不然就成了填充整个上下文
-
+        
         let graphaStartPoint = CGPoint.init(x: margin, y: columYPoint(maxValue))
         let graphEndPoint = CGPoint.init(x: margin, y: bounds.height)
         context.drawLinearGradient(gradient, start: graphaStartPoint, end: graphEndPoint, options: [])
-        
         
         // MARK: - 恢复裁剪前的上下文状态并绘制折线 - 当设置各种上下文属性就相当于设置上下文状态如填充颜色/变换矩阵/颜色空间/裁剪区域等
         UIColor.blue.setFill()
@@ -101,7 +99,7 @@ public class GraphView: UIView {
         context.restoreGState()// 相当于上两句代码设置的上下文状态又被覆盖了所以点不是白色的且上下文也恢复成原来的没被折线路径裁剪过的上下文
         
         graphPath.stroke()// 到此绘制数据折线路径
-
+        
         // MARK: - 绘制一个个数据点
         for i in 0..<graphPoints.count {
             var point = CGPoint.init(x: columXPoint(i), y: columYPoint(graphPoints[i]))
@@ -111,7 +109,6 @@ public class GraphView: UIView {
             let circle = UIBezierPath.init(ovalIn: CGRect.init(origin: point, size: .init(width: Constants.circleDiameter, height: Constants.circleDiameter)))
             circle.fill()
         }
-
         
         // MARK: - 绘制基准线
         let linePath = UIBezierPath.init()

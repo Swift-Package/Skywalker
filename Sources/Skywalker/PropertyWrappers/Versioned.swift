@@ -19,7 +19,6 @@ public struct Versioned<Value> {
         set {
             value = newValue
             timestampedValues.append((Date.init(), value))
-//            print(timestampedValues)
         }
     }
     

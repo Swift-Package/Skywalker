@@ -13,17 +13,6 @@ import UIKit
 public extension UIImage {
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
 #endif

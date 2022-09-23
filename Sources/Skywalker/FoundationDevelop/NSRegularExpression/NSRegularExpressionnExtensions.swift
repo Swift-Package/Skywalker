@@ -11,11 +11,4 @@ import Foundation
 public extension NSRegularExpression {
     
     
-    
-    
-    
-    
-    
-    
-    
 }

@@ -49,7 +49,7 @@ public enum XcodeConfiguration {
     
 }
 
-//func getDataFromInfoPlist(){
+// func getDataFromInfoPlist(){
 //    if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
 //       let infoListValue = NSDictionary(contentsOfFile: path)
 //        do {
@@ -61,4 +61,4 @@ public enum XcodeConfiguration {
 //        }
 //
 //    }
-//}
+// }

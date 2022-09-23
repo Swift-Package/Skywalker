@@ -89,6 +89,4 @@ public extension CGContext {
         return path.copy()!
     }
     
-    
 }
-

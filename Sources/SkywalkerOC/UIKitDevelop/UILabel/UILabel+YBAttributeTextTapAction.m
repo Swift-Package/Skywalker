@@ -21,7 +21,6 @@
 
 @end
 
-
 @implementation UILabel (YBAttributeTextTapAction)
 
 #pragma mark - AssociatedObjects
@@ -169,7 +168,6 @@
     }
     
     UITouch *touch = [touches anyObject];
-    
     CGPoint point = [touch locationInView:self];
     
     __weak typeof(self) weakSelf = self;
@@ -292,7 +290,6 @@
             
             for (int j = 0; j < link_count; j++) {
                 YBAttributeModel *model = self.attributeStrings[j];
-                
                 NSRange link_range = model.range;
                 if (NSLocationInRange(index, link_range)) {
                     if (resultBlock) {

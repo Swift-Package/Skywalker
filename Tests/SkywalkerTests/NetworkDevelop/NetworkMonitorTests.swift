@@ -16,9 +16,9 @@ class NetworkMonitorTests: XCTestCase {
 
     @objc func showOfflineDeviceUI(notification: Notification) {
         if NetworkMonitor.shared.isConnected {
-            print("Connected")
+            print("Skywalker Network Connected")
         } else {
-            print("Not connected")
+            print("Skywalker Not Network Connected")
         }
     }
     

@@ -60,4 +60,5 @@ public extension UIControl {
     func removeTouchupInsideAction() {
         self.removeEventAction(for: .touchUpInside)
     }
+    
 }

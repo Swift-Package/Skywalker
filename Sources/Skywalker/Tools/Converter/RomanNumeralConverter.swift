@@ -42,5 +42,4 @@ public class RomanNumeralConverter: NSObject {
         return result
     }
     
-    
 }

@@ -8,10 +8,10 @@
 import Foundation
 
 enum UserDefaultsHelper {
-    static private let defaults = UserDefaults(suiteName: Config.stringValue(forKey: "USER_DEFAULTS_SUITE_NAME")) ?? .standard
+    static private let defaults = UserDefaults(suiteName: XCConfiguration.stringValue(forKey: "USER_DEFAULTS_SUITE_NAME")) ?? .standard
     
     // 分离各个环境的数据
-    static private let recordsKey = Config.stringValue(forKey: "USER_DEFAULTS_RECORDS_KEY")
+    static private let recordsKey = XCConfiguration.stringValue(forKey: "USER_DEFAULTS_RECORDS_KEY")
     
     static func getRecords() -> [Hatchling] {
         guard let objects = defaults.value(forKey: recordsKey) as? Data,
@@ -50,13 +50,3 @@ struct Hatchling: Codable {
     }
     
 }
-
-enum Config {
-    static func stringValue(forKey key: String) -> String {
-        guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String else {
-            fatalError("Invalid value or undefined key")
-        }
-        return value
-    }
-}
-

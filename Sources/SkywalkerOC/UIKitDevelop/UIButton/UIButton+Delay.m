@@ -20,7 +20,7 @@
 @implementation UIButton (Delay)
 
 - (void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-    NSLog(@"UIButton+Delay点击了");
+    NSLog(@"Skywalker UIButton+Delay点击了");
     if (!self.isNeedDelay) {
         [super sendAction:action to:target forEvent:event];
         return;
@@ -49,7 +49,7 @@
             });
         } else {
             self.delayInterval--;
-            NSLog(@"UIButton+Delay倒计时");
+            NSLog(@"Skywalker UIButton+Delay倒计时");
             return;
         }
     });

@@ -11,6 +11,4 @@ import Foundation
 public extension NSString {
     
     
-    
-    
 }
