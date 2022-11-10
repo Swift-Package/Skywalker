@@ -10,9 +10,10 @@
 @implementation NSData (Convert)
 
 - (int)decimalValue {
-    uint32_t value = 0;
-    [self getBytes:&value length:self.length];
-    return (int)value;
+    unsigned result = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:self.lowercaseHexString];
+    [scanner scanHexInt:&result];
+    return result;
 }
 
 - (float)floatValue {
