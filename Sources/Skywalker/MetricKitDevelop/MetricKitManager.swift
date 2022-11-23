@@ -9,7 +9,7 @@ import MetricKit
 
 public class MetricKitManager: NSObject {
     
-    static let shared = MetricKitManager.init()
+    public static let shared = MetricKitManager.init()
     
     private override init() {
         super.init()
