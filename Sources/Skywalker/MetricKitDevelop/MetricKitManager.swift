@@ -7,7 +7,7 @@
 
 import MetricKit
 
-class MetricKitManager: NSObject {
+public class MetricKitManager: NSObject {
     
     static let shared = MetricKitManager.init()
     
@@ -27,12 +27,12 @@ class MetricKitManager: NSObject {
 }
 
 extension MetricKitManager: MXMetricManagerSubscriber {
-    func didReceive(_ payloads: [MXMetricPayload]) {
+    public func didReceive(_ payloads: [MXMetricPayload]) {
         guard let firstPayload = payloads.first else { return }
         print("Skywalker \(firstPayload.dictionaryRepresentation())")
     }
     
-    func didReceive(_ payloads: [MXDiagnosticPayload]) {
+    public func didReceive(_ payloads: [MXDiagnosticPayload]) {
         guard let firstPayload = payloads.first else { return }
         print("Skywalker \(firstPayload.dictionaryRepresentation())")
     }
