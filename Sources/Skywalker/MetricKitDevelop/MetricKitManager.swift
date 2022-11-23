@@ -18,7 +18,7 @@ public class MetricKitManager: NSObject {
     deinit { MXMetricManager.shared.remove(self) }
     
     /// 启动MetricKit性能监控
-    func startMonitor() {
+    public func startMonitor() {
         MXMetricManager.shared.add(self)
         
         let metricLogHandle = MXMetricManager.makeLogHandle(category: "Skywalker")
