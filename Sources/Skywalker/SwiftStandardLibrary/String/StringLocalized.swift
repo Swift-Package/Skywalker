@@ -12,5 +12,4 @@ public extension String {
     func localized() -> String {
         return NSLocalizedString(self, tableName: "Localizable", bundle: Bundle.module, value: self, comment: self)
     }
-    
 }

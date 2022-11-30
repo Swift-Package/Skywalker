@@ -9,8 +9,8 @@
 
 import UIKit
 
-// MARK: - UITableViewCell注册最佳实践
 public extension UITableView {
+    
     func register<T: UITableViewCell>(_ : T.Type) {
         let nib = UINib.init(nibName: T.nibName, bundle: nil)
         register(nib, forCellReuseIdentifier: T.reuseIdentifier)
@@ -20,7 +20,6 @@ public extension UITableView {
         guard let cell = self.dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
             fatalError("无法通过重用标识 \(T.reuseIdentifier) 获得Cell")
         }
-        
         return cell
     }
 }

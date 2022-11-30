@@ -165,5 +165,4 @@ public extension UIView {
     var bottomConstraint: NSLayoutConstraint? {
         findConstraint(attribute: .bottom, for: self)
     }
-    
 }

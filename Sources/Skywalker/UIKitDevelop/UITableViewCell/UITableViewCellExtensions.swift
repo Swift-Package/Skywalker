@@ -9,9 +9,9 @@
 
 import UIKit
 
-// MARK: - UITableViewCell注册最佳实践
 @objc
 public extension UITableViewCell {
+    
     static var reuseIdentifier: String {
         return String.init(describing: self)
     }

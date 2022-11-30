@@ -27,13 +27,11 @@ struct Project: Codable {
     }
 }
 
-
 class BundleDecodeTests: XCTestCase {
     func testExample() throws {
         // ⚠️执行该测试时需要将扩展的Bundle.main改成Bundle.module以访问Skywalker模块里的Projects.json文件
-//        let projects = Bundle.decode([Project].self, from: "Projects.json")
-//        XCTAssertEqual(projects.first?.title, "Storm Viewer")
+        // let projects = Bundle.decode([Project].self, from: "Projects.json")
+        // XCTAssertEqual(projects.first?.title, "Storm Viewer")
         
     }
-    
 }

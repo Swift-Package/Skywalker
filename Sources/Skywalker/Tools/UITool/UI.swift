@@ -10,6 +10,7 @@ import UIKit
 @objcMembers
 /// 用来判断设备及用户界面特征
 public class UI: NSObject {
+    
     public static let shared = UI.init()
     
     public var isPortrait: Bool {
@@ -20,6 +21,5 @@ public class UI: NSObject {
     }
     
     public var isiPad: Bool { UIDevice.current.userInterfaceIdiom == .pad }
-    
 }
 

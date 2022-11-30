@@ -16,7 +16,6 @@ class StringLocalizedTests: XCTestCase {
         
         XCTAssertEqual("摇晃".localized(), "Roll")
         
-//        XCTAssertEqual("摇晃".localized(), "摇晃晃")// 测试App Language为中文的情况下
+        // XCTAssertEqual("摇晃".localized(), "摇晃晃")// 测试App Language为中文的情况下
     }
-
 }

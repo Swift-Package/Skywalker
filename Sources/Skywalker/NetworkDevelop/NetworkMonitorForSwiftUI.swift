@@ -9,12 +9,12 @@ import Foundation
 import Network
 
 public class NetworkMonitorForSwiftUI: ObservableObject {
+    
     static let shared = NetworkMonitorForSwiftUI()
     
     private let monitor: NWPathMonitor
-    private let queue = DispatchQueue.init(label: "NetworkConnectivityMonitor")
-    
     @Published var currentInterface: NWInterface.InterfaceType = .wifi
+    private let queue = DispatchQueue.init(label: "NetworkConnectivityMonitor")
     
     private init() {
         monitor = NWPathMonitor.init()
@@ -35,5 +35,4 @@ public class NetworkMonitorForSwiftUI: ObservableObject {
     public func stop() {
         monitor.cancel()
     }
-    
 }

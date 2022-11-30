@@ -7,7 +7,9 @@
 
 import UIKit
 
+@objc
 public extension UIViewController {
+    
     func confirmAlert(title: String, message: String) {
         let confirmAlert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
         let confirmAction = UIAlertAction.init(title: "确定", style: .default)

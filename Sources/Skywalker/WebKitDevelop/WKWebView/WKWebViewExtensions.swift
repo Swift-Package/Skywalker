@@ -9,6 +9,7 @@ import WebKit
 
 @objc
 public extension WKWebView {
+    
     func load(_ urlString: String) {
         guard let url = URL(string: urlString) else { return }
         

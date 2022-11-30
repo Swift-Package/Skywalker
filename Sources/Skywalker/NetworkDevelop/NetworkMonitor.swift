@@ -19,6 +19,7 @@ public extension Notification.Name {
 /// 网络状态监听类 使用时在didFinishLaunchingWithOptions方法内NetworkMonitor.shared.startMonitoring()
 @objc
 public final class NetworkMonitor: NSObject {
+    
     public static let shared = NetworkMonitor()
     
     private let monitor: NWPathMonitor
@@ -53,5 +54,4 @@ public final class NetworkMonitor: NSObject {
     public func stopMonitoring() {
         monitor.cancel()
     }
-    
 }

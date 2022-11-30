@@ -9,7 +9,7 @@ import XCTest
 
 /// 测试Core Foundation字节序转换工具函数
 class ByteOrderUtilitiesTests: XCTestCase {
-
+    
     func testExample() throws {
         XCTAssertTrue((CFByteOrderGetCurrent() != 0))
         
@@ -18,10 +18,7 @@ class ByteOrderUtilitiesTests: XCTestCase {
         XCTAssertEqual(CFSwapInt32HostToBig(4043309055), 4294967280)
         XCTAssertEqual(CFSwapInt32HostToBig(0xf0ffffff), 0xfffffff0)
         
-        
         //f0ff ffff
-        
         //ffff fff0
     }
-
 }

@@ -29,8 +29,5 @@ class SortedSelfTests: XCTestCase {
         
         people.append(Person.init(firstName: "X", lastName: "X", age: 1))
         XCTAssertEqual(people[0].age, 1)
-        
     }
-    
-    
 }

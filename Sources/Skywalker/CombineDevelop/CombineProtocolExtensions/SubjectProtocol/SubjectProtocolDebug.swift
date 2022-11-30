@@ -25,7 +25,6 @@ public extension Subject where Output == String {
             self.send(completion: .finished)
         }
     }
-    
 }
 
 /// 更高抽象度的扩展
@@ -47,7 +46,6 @@ public extension Subject {
             self.send(completion: .finished)
         }
     }
-    
 }
 
 public let typingHelloWorld: [(TimeInterval, String)] = [

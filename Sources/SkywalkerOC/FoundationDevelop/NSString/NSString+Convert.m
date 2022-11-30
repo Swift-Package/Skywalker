@@ -78,9 +78,7 @@
 }
 
 - (NSDictionary *)jsonToDictionary {
-    if (self == nil) {
-        return nil;
-    }
+    if (self == nil) { return nil; }
     
     NSError *error;
     NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];

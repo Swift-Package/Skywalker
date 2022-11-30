@@ -13,6 +13,7 @@ public protocol ImagePublisher {
 }
 
 extension URL: ImagePublisher {
+    
     /// 通过URL生成图片发布者
     /// - Returns: 图片发布者
     public func imagePublisher() -> AnyPublisher<UIImage?, Never> {
@@ -25,6 +26,7 @@ extension URL: ImagePublisher {
 }
 
 extension String: ImagePublisher {
+    
     /// 通过字符串生成图片发布者
     /// - Returns: 图片发布者 "name".imagePublisher().assign(to: \.image, on: UIImageView.init()).store(in: &cancellables)
     public func imagePublisher() -> AnyPublisher<UIImage?, Never> {
@@ -37,6 +39,7 @@ extension String: ImagePublisher {
 }
 
 extension UIColor: ImagePublisher {
+    
     public func imagePublisher() -> AnyPublisher<UIImage?, Never> {
         return Deferred<AnyPublisher<UIImage?, Never>> {
             let rect = CGRect.init(x: 0, y: 0, width: 300, height: 300)

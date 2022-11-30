@@ -16,5 +16,4 @@ class UIImageTests: XCTestCase {
         ii.convertToGray()
         ii.color(atPixel: CGPoint.zero)
     }
-
 }

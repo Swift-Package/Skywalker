@@ -17,5 +17,4 @@ public extension Color {
                 opacity: alpha
             )
     }
-    
 }

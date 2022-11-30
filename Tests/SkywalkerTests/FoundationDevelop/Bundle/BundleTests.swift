@@ -10,7 +10,7 @@ import XCTest
 
 /// 仅仅用来测试使用Bundle.module访问当前模块资源文件进行解码的操作
 class BundleTests: XCTestCase {
-
+    
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
@@ -21,7 +21,7 @@ class BundleTests: XCTestCase {
     var weather: WeatherbitData!
     
     override func setUpWithError() throws {
-//        let bundle = Bundle(for: type(of: self))
+        // let bundle = Bundle(for: type(of: self))
         let url = Bundle.module.url(forResource: "WeatherbitExample", withExtension: "json")!// 访问到当前测试目标内的WeatherbitExample.json文件
         exampleJSONData = try! Data(contentsOf: url)
         
@@ -40,7 +40,6 @@ class BundleTests: XCTestCase {
         XCTAssertEqual(Self.dateFormatter.string(from: weather.date), "08-28-2017")
         
     }
-    
 }
 
 // https://openweathermap.org/current#current_JSON
@@ -87,5 +86,4 @@ struct WeatherbitData: Decodable {
         let dateString = String(observation[0].datetime.prefix(10))
         return Self.dateFormatter.date(from: dateString) ?? Date()
     }
-    
 }

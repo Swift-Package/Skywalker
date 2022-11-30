@@ -104,7 +104,6 @@ public final class SwiftLogger: NSObject {
     public func log(_ message: String, log: OSLog = .default, type: OSLogType = .debug) {
         os_log("调试日志%{public}s", log: log, type: type, message)
     }
-    
 }
 
 // MARK: - 路标事件跟踪工具类
@@ -175,5 +174,4 @@ public final class SwiftSignposter: NSObject {
     public func signpostFlashEventWith(id: UInt64) {
         os_signpost(.event, log: Log.PointsOfInterest, name: "自定义路标瞬时事件发生", signpostID: OSSignpostID.init(id), "ID%{public}s", "\(id)")
     }
-    
 }

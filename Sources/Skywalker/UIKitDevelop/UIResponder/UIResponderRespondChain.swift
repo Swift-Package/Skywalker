@@ -24,5 +24,4 @@ extension UIResponder {
     @objc private func _trap() {
         Static.responder = self
     }
-    
 }

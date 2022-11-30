@@ -8,15 +8,15 @@
 import XCTest
 
 class MemoryLayoutTests: XCTestCase {
-
+    
     override func setUpWithError() throws {
         
     }
-
+    
     override func tearDownWithError() throws {
         
     }
-
+    
     func testExample() throws {
         let version: [UInt8] = [0, 0, 0]
         XCTAssertEqual(MemoryLayout.size(ofValue: version), 8)
@@ -25,5 +25,4 @@ class MemoryLayoutTests: XCTestCase {
         XCTAssertEqual(MemoryLayout.size(ofValue: [0, 0, 0]), 8)
         
     }
-
 }

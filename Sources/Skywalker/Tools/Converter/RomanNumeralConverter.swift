@@ -38,8 +38,6 @@ public class RomanNumeralConverter: NSObject {
                 localNumber = localNumber - item.number
             }
         }
-        
         return result
     }
-    
 }

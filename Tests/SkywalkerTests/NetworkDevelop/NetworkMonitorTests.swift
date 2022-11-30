@@ -9,11 +9,11 @@ import XCTest
 @testable import Skywalker
 
 class NetworkMonitorTests: XCTestCase {
-
+    
     func testExample() throws {
         NotificationCenter.default.addObserver(self, selector: #selector(showOfflineDeviceUI(notification:)), name: NSNotification.Name.connectivityStatus, object: nil)
     }
-
+    
     @objc func showOfflineDeviceUI(notification: Notification) {
         if NetworkMonitor.shared.isConnected {
             print("Skywalker Network Connected")
@@ -21,5 +21,4 @@ class NetworkMonitorTests: XCTestCase {
             print("Skywalker Not Network Connected")
         }
     }
-    
 }

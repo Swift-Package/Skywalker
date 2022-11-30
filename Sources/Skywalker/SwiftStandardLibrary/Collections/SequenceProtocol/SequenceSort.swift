@@ -11,6 +11,7 @@ import Foundation
 // https://www.youtube.com/watch?v=3ia3ngqM2mM
 
 public extension Sequence {
+    
     /// 通过属性进行排序
     /// - Parameter propertyAccessor: 比如arr.sorted(on: { $0.numberOfSeed })
     /// - Returns: 元素排序后的数组

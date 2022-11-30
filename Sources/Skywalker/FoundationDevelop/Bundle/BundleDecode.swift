@@ -32,5 +32,4 @@ public extension Bundle {
         
         fatalError("Skywalker 解码出错")
     }
-    
 }

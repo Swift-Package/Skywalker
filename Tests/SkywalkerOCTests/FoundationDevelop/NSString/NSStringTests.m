@@ -19,10 +19,4 @@
     XCTAssertEqual(str.hexData.decimalValue, 255);
 }
 
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-        
-    }];
-}
-
 @end

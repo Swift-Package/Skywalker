@@ -14,6 +14,7 @@ import UIKit
 
 @objc
 public extension UIGestureRecognizer {
+    
     /// 将手势识别器移除所在视图
     func removeFromView() {
         view?.removeGestureRecognizer(self)

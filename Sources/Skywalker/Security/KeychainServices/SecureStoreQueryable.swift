@@ -12,6 +12,7 @@ public protocol SecureStoreQueryable {
 }
 
 public struct GenericPasswordQueryable {
+    
     let service: String
     let accessGroup: String?
   

@@ -8,9 +8,8 @@
 import XCTest
 
 class StringSplitTests: XCTestCase {
-
+    
     func testExample() throws {
-        
         XCTAssertEqual("ccaadd".split(by: 2).count, 3)
         XCTAssertEqual("ccaadd".split(by: 2).first, "cc")
         XCTAssertEqual("ccaadd".split(by: 2).last, "dd")
@@ -25,8 +24,5 @@ class StringSplitTests: XCTestCase {
         XCTAssertEqual("ccaadd".split(by: 3).count, 2)
         XCTAssertEqual("ccaadd".split(by: 3).first, "cca")
         XCTAssertEqual("ccaadd".split(by: 3).last, "add")
-        
-        
     }
-
 }

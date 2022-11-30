@@ -31,6 +31,7 @@ public protocol StoryboardInstantiable: NSObjectProtocol {
 }
 
 public extension StoryboardInstantiable where Self: UIViewController {
+    
     static var defaultFileName: String { NSStringFromClass(Self.self).components(separatedBy: ".").last! }
     
     static func instantiateViewController(_ bundle: Bundle?) -> Self {

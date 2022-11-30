@@ -8,6 +8,7 @@
 import Foundation
 
 public extension Measurement where UnitType == UnitAngle {
+    
     /// 初始化
     /// - Parameter degrees: 角度
     init(degrees: Double) {
@@ -20,5 +21,4 @@ public extension Measurement where UnitType == UnitAngle {
         // 弧度 = 角度 * pi / 180
         return converted(to: .radians).value
     }
-    
 }

@@ -8,9 +8,9 @@
 import Foundation
 
 public extension Int {
+    
     /// 罗马数字字符串表示
     var romanNumeral: String {
         RomanNumeralConverter.init().convert(self)
     }
-    
 }

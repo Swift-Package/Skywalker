@@ -9,6 +9,7 @@ import UIKit
 
 @objc
 public extension UIRefreshControl {
+    
     /// SwifterSwift: Programmatically begin refresh control inside of UITableView
     ///
     /// - Parameters:

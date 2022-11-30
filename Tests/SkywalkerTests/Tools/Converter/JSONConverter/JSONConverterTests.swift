@@ -9,9 +9,8 @@ import XCTest
 @testable import Skywalker
 
 class JSONConverterTests: XCTestCase {
-
+    
     func testExample() throws {
         
     }
-
 }

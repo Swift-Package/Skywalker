@@ -7,6 +7,7 @@
 
 import Foundation
 
+@objc
 public extension DispatchQueue {
     
     /// 几秒后在主线程上回调Closure
@@ -16,5 +17,4 @@ public extension DispatchQueue {
     class func delay(_ delay: Double, closure: @escaping () -> ()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay, execute: closure)
     }
-    
 }

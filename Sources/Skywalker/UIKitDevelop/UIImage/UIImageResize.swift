@@ -9,6 +9,7 @@ import UIKit
 
 @objc
 public extension UIImage {
+    
     /// 重设图片尺寸(SVG图片也不会产生边缘黑底)
     /// - Parameter size: 新尺寸
     /// - Returns: 新尺寸的图片

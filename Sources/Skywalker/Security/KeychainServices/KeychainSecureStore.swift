@@ -10,6 +10,7 @@ import Foundation
 import Security
 
 public struct KeychainSecureStore {
+    
     let secureStoreQueryable: SecureStoreQueryable
   
     public init(secureStoreQueryable: SecureStoreQueryable) {

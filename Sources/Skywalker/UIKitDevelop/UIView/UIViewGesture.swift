@@ -25,5 +25,4 @@ public extension UIView {
             removeGestureRecognizer(recognizer)
         }
     }
-    
 }

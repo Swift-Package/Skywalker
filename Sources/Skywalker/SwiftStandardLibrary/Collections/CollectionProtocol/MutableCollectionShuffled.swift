@@ -8,6 +8,7 @@
 import Foundation
 
 public extension MutableCollection {
+    
     /// 打乱可变集合元素
     mutating func shuffle() {
         let c = count
@@ -18,7 +19,5 @@ public extension MutableCollection {
             let i = index(firstUnshuffled, offsetBy: d)
             swapAt(firstUnshuffled, i)
         }
-        
     }
-    
 }

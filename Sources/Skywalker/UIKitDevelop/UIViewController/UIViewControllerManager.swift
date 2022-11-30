@@ -9,6 +9,7 @@ import UIKit
 
 @objcMembers
 public class UIViewControllerManager: NSObject {
+    
     public static let shared = UIViewControllerManager.init()
     
     /// 获取根视图控制器
@@ -72,5 +73,4 @@ public class UIViewControllerManager: NSObject {
         }
         return viewController
     }
-    
 }

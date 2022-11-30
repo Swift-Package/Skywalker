@@ -9,6 +9,9 @@ import UIKit
 
 @objc
 public extension UIViewController {
+    
+    /// 自定义导航栏返回按钮图标
+    /// - Parameter iconName: 图标名称
     func customNavBackIcon(_ iconName: String) {
         let navBackButton = UIButton.init().then { make in
             make.setImage(.init(named: iconName), for: .normal)

@@ -8,6 +8,7 @@
 import Foundation
 
 public extension String {
+    
     /// 将字符串分割成由等长子字符串组成的数组
     /// - Parameter length: 子字符串长度
     /// - Returns: 子字符串组成的数组
@@ -20,8 +21,6 @@ public extension String {
             results.append(self[startIndex..<endIndex])
             startIndex = endIndex
         }
-        
         return results.map { String($0) }
     }
-    
 }

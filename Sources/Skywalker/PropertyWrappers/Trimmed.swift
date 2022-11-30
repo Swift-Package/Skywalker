@@ -9,6 +9,7 @@ import Foundation
 
 @propertyWrapper
 public struct Trimmed {
+    
     private(set) var value: String = ""
     
     public var wrappedValue: String {
@@ -21,5 +22,4 @@ public struct Trimmed {
     public init(wrappedValue: String) {
         self.wrappedValue = wrappedValue
     }
-    
 }

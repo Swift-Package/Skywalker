@@ -11,13 +11,12 @@ public extension Date {
     
     @available(iOS 15.0, *)
     var displayFormat: String {
-        formatted(
-            .dateTime
-            .year(.defaultDigits)
-            .month(.wide)
-            .day(.twoDigits)
-            .hour(.conversationalDefaultDigits(amPM: .wide))
-            .minute()
+        formatted(.dateTime
+                .year(.defaultDigits)
+                .month(.wide)
+                .day(.twoDigits)
+                .hour(.conversationalDefaultDigits(amPM: .wide))
+                .minute()
         )
     }
     
@@ -26,5 +25,4 @@ public extension Date {
     var json: String {
         formatted(.iso8601)
     }
-    
 }

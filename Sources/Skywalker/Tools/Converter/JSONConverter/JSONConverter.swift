@@ -10,6 +10,7 @@ import Foundation
 /// JSON转换工具
 @objcMembers
 public class JSONConverter: NSObject {
+    
     /// 将JSON转换成字符串
     /// - Parameter json: JSON对象
     /// - Returns: JSON对象的字符串表示
@@ -20,5 +21,4 @@ public class JSONConverter: NSObject {
         
         return converted
     }
-    
 }

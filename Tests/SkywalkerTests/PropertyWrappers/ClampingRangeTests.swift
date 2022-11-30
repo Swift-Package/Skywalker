@@ -13,7 +13,7 @@ struct Solution {
 }
 
 class ClampingRangeTests: XCTestCase {
-
+    
     func testExample() throws {
         let s = Solution.init()
         
@@ -30,7 +30,5 @@ class ClampingRangeTests: XCTestCase {
         
         sss.pH = -4
         XCTAssertEqual(sss.pH, 0)
-        
     }
-
 }

@@ -18,10 +18,4 @@
     
 }
 
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-        
-    }];
-}
-
 @end

@@ -10,6 +10,7 @@ import Foundation
 /// 指定属性值边界的包装器
 @propertyWrapper
 public struct ClampingRange<Value: Comparable> {
+    
     var value: Value
     let range: ClosedRange<Value>
     
@@ -27,5 +28,4 @@ public struct ClampingRange<Value: Comparable> {
         self.value = wrappedValue
         self.range = range
     }
-    
 }

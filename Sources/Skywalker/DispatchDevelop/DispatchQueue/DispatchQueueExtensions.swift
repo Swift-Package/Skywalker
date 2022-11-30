@@ -7,6 +7,7 @@
 
 import Foundation
 
-extension DispatchQueue {
+@objc
+public extension DispatchQueue {
     
 }

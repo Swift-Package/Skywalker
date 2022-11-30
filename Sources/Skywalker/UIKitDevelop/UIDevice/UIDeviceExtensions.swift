@@ -11,6 +11,7 @@ import UIKit
 
 @objc
 public extension UIDevice {
+    
     /// 当前设备是不是iPad
     /// - Returns: 是iPad返回true
     class func isIPad() -> Bool {

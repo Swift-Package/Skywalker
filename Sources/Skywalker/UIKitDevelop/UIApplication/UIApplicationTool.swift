@@ -19,5 +19,4 @@ public extension UIApplication {
             print("Skywalker 清除启动页缓存失败")
         }
     }
-    
 }

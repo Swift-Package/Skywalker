@@ -5,9 +5,9 @@
 //  Created by 杨俊艺 on 2022/4/29.
 //
 
-import UIKit
-
 // https://www.raywenderlich.com/10946920-core-graphics-tutorial-gradients-and-contexts
+
+import UIKit
 
 extension GraphView {
     private enum Constants {
@@ -23,6 +23,7 @@ extension GraphView {
 @IBDesignable
 @objcMembers
 public class GraphView: UIView {
+    
     @IBInspectable var startColor: UIColor = .red
     @IBInspectable var endColor: UIColor = .green
     
@@ -124,6 +125,4 @@ public class GraphView: UIView {
         UIColor.white.withAlphaComponent(Constants.colorAlpha).setStroke()
         linePath.stroke()
     }
-    
 }
-

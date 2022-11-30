@@ -9,7 +9,7 @@ import XCTest
 @testable import Skywalker
 
 class UserDefaultsWrapperTests: XCTestCase {
-
+    
     @UserDefault("USES_TOUCH_ID", defaultValue: true)
     static var usesTouchID: Bool
     
@@ -22,7 +22,5 @@ class UserDefaultsWrapperTests: XCTestCase {
         XCTAssertEqual(UserDefaultsWrapperTests.usesTouchID, true)
         UserDefaultsWrapperTests.usesTouchID = false
         XCTAssertEqual(UserDefaultsWrapperTests.usesTouchID, false)
-        
     }
-
 }

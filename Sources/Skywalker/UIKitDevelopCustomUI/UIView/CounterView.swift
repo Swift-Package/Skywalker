@@ -75,10 +75,10 @@ public class CounterView: UIView {
         let markerWidth: CGFloat = 5.0
         let markerHeight: CGFloat = 10.0
         let markerPath = UIBezierPath.init(rect: CGRect.init(x: -markerWidth / 2, y: 0, width: markerWidth, height: markerHeight))
-//        markerPath.fill()
+        // markerPath.fill()
         // 将上下文原点平移到上下文坐标系中心 - 取消前后两个注释就懂了markerPath.fill()
         context.translateBy(x: rect.width / 2, y: rect.height / 2)
-//        markerPath.fill()
+        // markerPath.fill()
         
         for i in 0...Constants.numberOfGlasses {
             context.saveGState() // 保存上下文居中 旋转和平移具有前后依赖性
@@ -96,5 +96,4 @@ public class CounterView: UIView {
         // 恢复状态方便之后绘制
         context.restoreGState()
     }
-    
 }

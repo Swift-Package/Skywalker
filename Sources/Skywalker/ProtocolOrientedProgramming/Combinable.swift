@@ -12,12 +12,14 @@ protocol Combinable {
 }
 
 extension String: Combinable {
+    
     func combine(_ other: String) -> String {
         self + other
     }
 }
 
 extension Array: Combinable {
+    
     func combine(_ other: Array<Element>) -> Array<Element> {
         self + other
     }

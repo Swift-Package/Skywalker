@@ -12,7 +12,6 @@ import UIKit
 @objc
 public extension UIImage {
     
-    
 }
 
 #endif

@@ -10,5 +10,4 @@ import Foundation
 @objc
 public extension NSRegularExpression {
     
-    
 }

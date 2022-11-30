@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 public extension String {
+    
     /// 生成二维码图片
     /// - Returns: 可能为nil的二维码图片
     func generateQRCodeImage() -> UIImage? {

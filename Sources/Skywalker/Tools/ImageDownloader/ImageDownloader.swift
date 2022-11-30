@@ -13,8 +13,10 @@ public enum DownloadError: Error {
 }
 
 public class ImageDownloader {
-    private init () {}
+    
     public static let shared = ImageDownloader()
+    
+    private init() {}
     
     public func downloadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -22,23 +24,18 @@ public class ImageDownloader {
                 completion(.failure(error))
                 return
             }
-            
             guard let data = data else {
                 completion(.failure(DownloadError.emptyData))
                 return
             }
-            
             guard let image = UIImage(data: data) else {
                 completion(.failure(DownloadError.invalidImage))
                 return
             }
-            
             completion(.success(image))
         }
-        
         task.resume()
     }
-    
 }
 
 // ImageDownloader.shared.downloadImage(forURL: url) { [weak self] result in

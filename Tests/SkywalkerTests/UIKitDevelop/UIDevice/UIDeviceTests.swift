@@ -9,9 +9,8 @@ import XCTest
 @testable import Skywalker
 
 class UIDeviceTests: XCTestCase {
-
+    
     func testExample() throws {
         XCTAssertFalse(UIDevice.isIPad())
     }
-
 }

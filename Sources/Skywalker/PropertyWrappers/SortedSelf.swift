@@ -10,6 +10,7 @@ import Foundation
 /// 指定KeyPath排序规则的数组属性包装器使用介绍查看单元测试
 @propertyWrapper
 public struct SortedSelf<Element, SortProperty: Comparable> {
+    
     var array: [Element] = []
     let sortProperty: KeyPath<Element, SortProperty>
     
@@ -22,5 +23,4 @@ public struct SortedSelf<Element, SortProperty: Comparable> {
         self.sortProperty = sortProperty
         self.wrappedValue = wrappedValue
     }
-    
 }

@@ -27,6 +27,7 @@ public class MetricKitManager: NSObject {
 }
 
 extension MetricKitManager: MXMetricManagerSubscriber {
+    
     public func didReceive(_ payloads: [MXMetricPayload]) {
         guard let firstPayload = payloads.first else { return }
         print("Skywalker \(firstPayload.dictionaryRepresentation())")

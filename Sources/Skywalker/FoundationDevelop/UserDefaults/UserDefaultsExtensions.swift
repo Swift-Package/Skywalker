@@ -8,6 +8,7 @@
 import Foundation
 
 enum UserDefaultsHelper {
+    
     static private let defaults = UserDefaults(suiteName: XCConfiguration.stringValue(forKey: "USER_DEFAULTS_SUITE_NAME")) ?? .standard
     
     // 分离各个环境的数据
@@ -35,7 +36,6 @@ enum UserDefaultsHelper {
     static func getRecordsCount() -> Int {
         return getRecords().count
     }
-    
 }
 
 struct Hatchling: Codable {
@@ -48,5 +48,4 @@ struct Hatchling: Codable {
         let don = Hatchling(tag: "Donatello", date: Date())
         return [leo, don]
     }
-    
 }

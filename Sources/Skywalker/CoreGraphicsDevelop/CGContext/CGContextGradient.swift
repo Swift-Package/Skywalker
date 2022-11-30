@@ -10,6 +10,7 @@ import UIKit
 public typealias Angle = Measurement<UnitAngle>
 
 public extension CGContext {
+    
     /// 从上到下在指定的矩形区域内绘制一层颜色渐变
     /// - Parameters:
     ///   - rect: 指定的矩形区域
@@ -88,5 +89,4 @@ public extension CGContext {
         
         return path.copy()!
     }
-    
 }

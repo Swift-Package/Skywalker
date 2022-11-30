@@ -11,6 +11,7 @@ import UIKit
 
 @objc
 public extension UISwitch {
+    
     /// 切换开关状态
     /// - Parameter animated: 是否需要切换动画
     func toggle(animated: Bool = true) {

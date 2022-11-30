@@ -13,12 +13,10 @@ struct Post {
 }
 
 class TrimmedTests: XCTestCase {
-
+    
     func testExample() throws {
         XCTAssertEqual(Post.init(title: "cccc").title, "cccc")
         
         XCTAssertEqual(Post.init(title: " cccc ").title, "cccc")
-        
     }
-
 }

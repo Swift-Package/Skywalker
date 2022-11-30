@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 public extension Timer {
+    
     static func loop(every interval: TimeInterval, over total: Int) -> AnyPublisher<Int, Never> {
         if total < 1 { return Empty.init().eraseToAnyPublisher() }
         return self.publish(every: interval, on: .main, in: .common).autoconnect()
@@ -26,4 +27,3 @@ let array: [ImagePublisher] = ["some", UIColor.white]
 //    .flatMap { array[$0].imagePublisher() }
 //    .assign(to: \.image, on: UIImageView.init())
 //    .store(in: &cancellables)
-

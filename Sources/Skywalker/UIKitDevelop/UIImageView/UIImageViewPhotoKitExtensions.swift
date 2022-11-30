@@ -33,7 +33,6 @@ public extension UIImageView {
     
         PHImageManager.default().requestImage(for: asset, targetSize: size, contentMode: contentMode, options: options, resultHandler: resultHandler)
     }
-    
 }
 
 #endif

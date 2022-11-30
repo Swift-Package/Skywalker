@@ -10,10 +10,10 @@ import UIKit
 @objc
 public extension UIView {
     
+    /// 关闭键盘
     func closeKeyboard() {
-      for view in self.subviews where view.isFirstResponder {
-          view.resignFirstResponder()
-      }
+        for view in self.subviews where view.isFirstResponder {
+            view.resignFirstResponder()
+        }
     }
-    
 }

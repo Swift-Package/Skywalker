@@ -14,12 +14,10 @@ public protocol RateViewDelegate {
 
 @objcMembers
 public class RateView: UIView {
+    
     var notSelectedImage: UIImage? { didSet { refresh() } }
-    
     var fullSelectedImage: UIImage? { didSet { refresh() } }
-    
     var rating: Float = 0 { didSet { refresh() } }
-    
     var editable = false
     var imageViews: [UIImageView] = []
     var maxRating = 5 { didSet { rebindMaxRating() } }
@@ -102,5 +100,4 @@ public class RateView: UIView {
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         delegate.rateViewRatingDidChange(rateView: self, newRating: rating)
     }
-    
 }

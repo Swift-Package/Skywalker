@@ -51,5 +51,4 @@ public class PushButton: UIButton {
         
         plusPath.stroke()
     }
-    
 }

@@ -59,21 +59,3 @@ extension JSONEncoder: Then {}
     extension UIOffset: Then {}
     extension UIRectEdge: Then {}
 #endif
-
-
-//    let label = UILabel().then {
-//        $0.textAlignment = .center
-//        $0.textColor = UIColor.black
-//        $0.text = "Hello, World!"
-//    }
-
-//    UserDefaults.standard.do {
-//        $0.set("devxoul", forKey: "username")
-//        $0.set("devxoul@gmail.com", forKey: "email")
-//        $0.synchronize()
-//    }
-
-//    let frame = CGRect().with {
-//        $0.origin.x = 10
-//        $0.size.width = 100
-//    }

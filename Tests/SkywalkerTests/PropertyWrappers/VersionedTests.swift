@@ -20,7 +20,5 @@ class VersionedTests: XCTestCase {
         
         testSuit.state = .denied
         testSuit.state = .approved
-        
     }
-
 }

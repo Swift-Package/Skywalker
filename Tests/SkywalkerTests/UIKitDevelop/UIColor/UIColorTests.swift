@@ -10,9 +10,8 @@ import XCTest
 @testable import SkywalkerOC
 
 class UIColorTests: XCTestCase {
-
+    
     func testExample() throws {
         
     }
-
 }

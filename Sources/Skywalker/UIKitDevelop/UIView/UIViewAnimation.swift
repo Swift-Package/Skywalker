@@ -7,7 +7,6 @@
 
 import UIKit
 
-// MARK: - 便捷动画
 @objc
 public extension UIView {
     
@@ -119,5 +118,4 @@ public extension UIView {
         layer.add(animation, forKey: "shake")
         CATransaction.commit()
     }
-    
 }
