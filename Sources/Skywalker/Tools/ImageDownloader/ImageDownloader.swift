@@ -20,7 +20,7 @@ public class ImageDownloader {
     
     public func downloadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
+            if let error {
                 completion(.failure(error))
                 return
             }

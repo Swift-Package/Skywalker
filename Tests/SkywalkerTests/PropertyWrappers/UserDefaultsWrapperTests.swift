@@ -8,19 +8,34 @@
 import XCTest
 @testable import Skywalker
 
+fileprivate class Note: Codable {
+    
+}
+
+fileprivate class UserDefaultsDataSource {
+    @UserDefault("is_first_launch", defaultValue: true)
+    static var isFirstLaunch: Bool
+    
+    @UserDefault(storage: .standard, "counter", defaultValue: 1)
+    static var counter: Int
+    
+    @UserDefaultCodable(key: "notes", defaultValue: nil)
+    static var notes: [Note]?
+    
+}
+
 class UserDefaultsWrapperTests: XCTestCase {
     
-    @UserDefault("USES_TOUCH_ID", defaultValue: true)
-    static var usesTouchID: Bool
-    
-    override func tearDownWithError() throws {
-        UserDefaults.standard.set(true, forKey: "USES_TOUCH_ID")
-    }
-    
     func testExample() throws {
-        XCTAssertEqual(UserDefaults.standard.bool(forKey: "USES_TOUCH_ID"), true)
-        XCTAssertEqual(UserDefaultsWrapperTests.usesTouchID, true)
-        UserDefaultsWrapperTests.usesTouchID = false
-        XCTAssertEqual(UserDefaultsWrapperTests.usesTouchID, false)
+        XCTAssertEqual(UserDefaultsDataSource.isFirstLaunch, true)
+        XCTAssertEqual(UserDefaults.standard.bool(forKey: "is_first_launch"), true)
+        
+        XCTAssertEqual(UserDefaultsDataSource.counter, 1)
+        XCTAssertEqual(UserDefaults.standard.value(forKey: "counter") as! Int, 1)
+        
+        XCTAssertNil(UserDefaultsDataSource.notes)
+        XCTAssertNil(UserDefaults.standard.value(forKey: "notes"))
+        
+        
     }
 }

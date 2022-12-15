@@ -11,8 +11,8 @@ import Foundation
 @propertyWrapper
 public struct ClampingRange<Value: Comparable> {
     
-    var value: Value
-    let range: ClosedRange<Value>
+    private var value: Value
+    private let range: ClosedRange<Value>
     
     public var wrappedValue: Value {
         get { value }

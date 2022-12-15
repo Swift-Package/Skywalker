@@ -12,7 +12,7 @@ public extension UIView {
     
     func fillToSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
-        if let superview = superview {
+        if let superview {
             let left = leftAnchor.constraint(equalTo: superview.leftAnchor)
             let right = rightAnchor.constraint(equalTo: superview.rightAnchor)
             let top = topAnchor.constraint(equalTo: superview.topAnchor)
@@ -47,19 +47,19 @@ public extension UIView {
 
         var anchors = [NSLayoutConstraint]()
 
-        if let top = top {
+        if let top {
             anchors.append(topAnchor.constraint(equalTo: top, constant: topConstant))
         }
 
-        if let left = left {
+        if let left {
             anchors.append(leftAnchor.constraint(equalTo: left, constant: leftConstant))
         }
 
-        if let bottom = bottom {
+        if let bottom {
             anchors.append(bottomAnchor.constraint(equalTo: bottom, constant: -bottomConstant))
         }
 
-        if let right = right {
+        if let right {
             anchors.append(rightAnchor.constraint(equalTo: right, constant: -rightConstant))
         }
 

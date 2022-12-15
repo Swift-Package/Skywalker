@@ -11,15 +11,15 @@ import Foundation
 @propertyWrapper
 public struct SortedSelf<Element, SortProperty: Comparable> {
     
-    var array: [Element] = []
-    let sortProperty: KeyPath<Element, SortProperty>
+    private var array: [Element] = []
+    private let sortProperty: KeyPath<Element, SortProperty>
     
     public var wrappedValue: [Element] {
         get { return array }
         set { array = newValue.sorted(by: { $0[keyPath: sortProperty] < $1[keyPath: sortProperty] }) }
     }
     
-    init(wrappedValue: [Element], by sortProperty: KeyPath<Element, SortProperty>) {
+    public init(wrappedValue: [Element], by sortProperty: KeyPath<Element, SortProperty>) {
         self.sortProperty = sortProperty
         self.wrappedValue = wrappedValue
     }
