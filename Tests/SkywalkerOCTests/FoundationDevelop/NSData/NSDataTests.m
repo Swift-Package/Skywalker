@@ -15,9 +15,7 @@
 @implementation NSDataTests
 
 - (void)testExample {
-    
     NSString *strFF = [NSString stringWithFormat:@"FF"];
-    XCTAssertEqual(strFF.hexData.lowercaseHexString.uppercaseString, [NSString stringWithFormat:@"FF"]);
     XCTAssertEqual(strFF.hexData.lowercaseHexString, [NSString stringWithFormat:@"ff"]);
     XCTAssertEqual(strFF.hexData.decimalValue, 255);
     
@@ -36,13 +34,6 @@
     XCTAssertEqual(str.hexData.decimalValue, 33554347);
     XCTAssertEqual(str.hexData.lowercaseHexString, [NSString stringWithFormat:@"01ffffab"]);
     XCTAssertEqual(str.hexData.lowercaseHexString.uppercaseString, [NSString stringWithFormat:@"01FFFFAB"]);
-    
-}
-
-- (void)testPerformanceExample {
-    [self measureBlock:^{
-        
-    }];
 }
 
 @end

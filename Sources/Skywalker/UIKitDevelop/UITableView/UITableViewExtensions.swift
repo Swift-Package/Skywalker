@@ -22,6 +22,25 @@ public extension UITableView {
         }
         return cell
     }
+    
+    /// 配合Realm数据库的enum RealmCollectionChange<CollectionType>使用
+    /// - Parameters:
+    ///   - deletions: 被删除的Index
+    ///   - insertions: 新增的Index
+    ///   - updates: 被更新的Index
+    func applyChanges(deletions: [Int], insertions: [Int], updates: [Int]) {
+        beginUpdates()
+        deleteRows(at: deletions.map(IndexPath.fromRow), with: .automatic)
+        insertRows(at: insertions.map(IndexPath.fromRow), with: .automatic)
+        reloadRows(at: updates.map(IndexPath.fromRow), with: .automatic)
+        endUpdates()
+    }
+}
+
+public extension IndexPath {
+    static func fromRow(_ row: Int) -> IndexPath {
+        IndexPath(row: row, section: 0)
+    }
 }
 
 #endif

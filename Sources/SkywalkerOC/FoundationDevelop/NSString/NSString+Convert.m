@@ -83,9 +83,7 @@
     NSError *error;
     NSData *jsonData = [self dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-    if (error) {
-        return nil;
-    }
+    if (error) { return nil; }
     return dictionary;
 }
 
