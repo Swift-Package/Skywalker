@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSDictionary (Convert)
 
 /// 字典转换成的字符串
-- (NSString *)jsonString;
+- (nullable NSString *)jsonString;
 
 @end
 

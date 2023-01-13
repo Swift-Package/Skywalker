@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param quality 压缩率
 - (UIImage *)resizeWith:(CGSize)maxSize compression:(float)quality;
 
+- (UIImage *)scaleSize:(CGSize)size;
+
 @end
 
 NS_ASSUME_NONNULL_END

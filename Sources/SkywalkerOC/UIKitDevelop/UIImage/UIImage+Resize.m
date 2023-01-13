@@ -46,4 +46,12 @@
     return [UIImage imageWithData:imageData];
 }
 
+- (UIImage *)scaleSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];        // 绘制改变大小的图片
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext(); // 从当前context中创建一个改变大小后的图片
+    UIGraphicsEndImageContext();
+    return scaledImage;
+}
+
 @end

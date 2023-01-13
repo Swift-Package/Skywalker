@@ -10,7 +10,7 @@ import XCTest
 final class CollectionSafeTests: XCTestCase {
 
     func testExample() throws {
-        var array = [0, 1, 2]
+        let array = [0, 1, 2]
         
         if let number = array[safe: 1] {
             XCTAssertEqual(number, 1)
