@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version:5.7
 
 import PackageDescription
 
@@ -21,8 +21,8 @@ let package = Package(
                     .copy("FoundationDevelop/Bundle/Projects.json")
                 ],
                 swiftSettings: [
-                    .define("PACKAGECONFIGURATION_DEBUG", .when(platforms: nil, configuration: .debug)),
-                    .define("PACKAGECONFIGURATION_RELEASE", .when(platforms: nil, configuration: .release)),
+                    .define("PACKAGECONFIGURATION_DEBUG", .when(configuration: .debug)),
+                    .define("PACKAGECONFIGURATION_RELEASE", .when(configuration: .release)),
                     //.unsafeFlags(["-suppress-warnings"]),// 压制编译警告
                 ]
                 //linkerSettings: [.linkedFramework("CFNetwork", .when(platforms: [.iOS], configuration: nil))]

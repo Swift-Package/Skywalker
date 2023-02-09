@@ -9,7 +9,7 @@
 
 import Foundation
 
-public extension Optional where Wrapped == String {
+public extension String? {
     
     var orEmpty: String {
         self ?? ""

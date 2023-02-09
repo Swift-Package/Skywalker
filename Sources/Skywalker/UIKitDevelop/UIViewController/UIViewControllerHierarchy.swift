@@ -15,7 +15,7 @@ public extension UIViewController {
         guard let child = child else { return nil }
         
         if child.parent != nil {
-            child.removeFromParentViewController()
+            child.removeFromParentVC()
         }
         
         child.willMove(toParent: self)
@@ -34,7 +34,8 @@ public extension UIViewController {
         return child
     }
     
-    func removeFromParentViewController() {
+    /// ⚠️这个方法名称不能写成removeFromParentViewController,这会导致在Objective-C中替换掉原来的removeFromParentViewController选择器进而导致键盘布局错乱2023年1月31日于海沧盈趣科技
+    func removeFromParentVC() {
         guard parent != nil else { return }
         
         DispatchQueue.main.async {
