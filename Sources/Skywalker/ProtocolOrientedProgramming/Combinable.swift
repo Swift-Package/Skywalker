@@ -1,6 +1,6 @@
 //
 //  Combinable.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/3/22.
 //
@@ -12,15 +12,13 @@ protocol Combinable {
 }
 
 extension String: Combinable {
-    
     func combine(_ other: String) -> String {
         self + other
     }
 }
 
 extension Array: Combinable {
-    
-    func combine(_ other: Array<Element>) -> Array<Element> {
+    func combine(_ other: [Element]) -> [Element] {
         self + other
     }
 }

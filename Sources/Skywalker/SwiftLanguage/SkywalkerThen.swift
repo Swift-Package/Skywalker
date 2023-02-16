@@ -1,6 +1,6 @@
 //
 //  SkywalkerThen.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/2/17.
 //
@@ -17,25 +17,25 @@ import Foundation
 
 public protocol Then {}
 
-extension Then where Self: AnyObject {
+public extension Then where Self: AnyObject {
     @inlinable
-    public func then(_ block: (Self) throws -> Void) rethrows -> Self {
+    func then(_ block: (Self) throws -> Void) rethrows -> Self {
         try block(self)
         return self
     }
 }
 
-extension Then where Self: Any {
-  /// Makes it available to set properties with closures just after initializing and copying the value types
+public extension Then where Self: Any {
+    /// Makes it available to set properties with closures just after initializing and copying the value types
     @inlinable
-    public func with(_ block: (inout Self) throws -> Void) rethrows -> Self {
+    func with(_ block: (inout Self) throws -> Void) rethrows -> Self {
         var copy = self
         try block(&copy)
         return copy
     }
 
     @inlinable
-    public func `do`(_ block: (Self) throws -> Void) rethrows {
+    func `do`(_ block: (Self) throws -> Void) rethrows {
         try block(self)
     }
 }

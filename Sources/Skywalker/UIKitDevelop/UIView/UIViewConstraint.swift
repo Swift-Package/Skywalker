@@ -1,6 +1,6 @@
 //
 //  UIViewConstraint.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/3/24.
 //
@@ -9,7 +9,6 @@ import UIKit
 
 @objc
 public extension UIView {
-    
     func fillToSuperview() {
         translatesAutoresizingMaskIntoConstraints = false
         if let superview {
@@ -20,7 +19,7 @@ public extension UIView {
             NSLayoutConstraint.activate([left, right, top, bottom])
         }
     }
-    
+
     @nonobjc func addConstraints(withFormat: String, views: UIView...) {
         var viewsDictionary: [String: UIView] = [:]
         for (index, view) in views.enumerated() {
@@ -30,7 +29,7 @@ public extension UIView {
         }
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: withFormat, options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: viewsDictionary))
     }
-    
+
     @discardableResult
     func anchor(top: NSLayoutYAxisAnchor? = nil,
                 left: NSLayoutXAxisAnchor? = nil,
@@ -41,7 +40,8 @@ public extension UIView {
                 bottomConstant: CGFloat = 0,
                 rightConstant: CGFloat = 0,
                 widthConstant: CGFloat = 0,
-                heightConstant: CGFloat = 0) -> [NSLayoutConstraint] {
+                heightConstant: CGFloat = 0) -> [NSLayoutConstraint]
+    {
         // https://videos.letsbuildthatapp.com/
         translatesAutoresizingMaskIntoConstraints = false
 
@@ -110,7 +110,7 @@ public extension UIView {
     @nonobjc func ancestorView<T: UIView>(withClass _: T.Type) -> T? {
         return ancestorView(where: { $0 is T }) as? T
     }
-  
+
     /// SwifterSwift: Returns all the subviews of a given type recursively in the
     /// view hierarchy rooted on the view it its called.
     ///
@@ -127,7 +127,7 @@ public extension UIView {
         }
         return views
     }
-    
+
     func findConstraint(attribute: NSLayoutConstraint.Attribute, for view: UIView) -> NSLayoutConstraint? {
         let constraint = constraints.first {
             ($0.firstAttribute == attribute && $0.firstItem as? UIView == view) ||

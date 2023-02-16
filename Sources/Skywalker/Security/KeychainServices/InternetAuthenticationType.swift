@@ -1,6 +1,6 @@
 //
 //  InternetAuthenticationType.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/9/23.
 //
@@ -10,7 +10,7 @@ import Foundation
 /// 描述您的包装器提供的身份验证机制
 public enum InternetAuthenticationType: RawRepresentable {
     case ntlm, msn, dpa, rpa, httpBasic, httpDigest, htmlForm, `default`
-  
+
     public init?(rawValue: String) {
         switch rawValue {
         case String(kSecAttrAuthenticationTypeNTLM):
@@ -33,7 +33,7 @@ public enum InternetAuthenticationType: RawRepresentable {
             self = .default
         }
     }
-    
+
     public var rawValue: String {
         switch self {
         case .ntlm:

@@ -1,6 +1,6 @@
 //
 //  ImageDownloader.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/7/6.
 //
@@ -13,13 +13,12 @@ public enum DownloadError: Error {
 }
 
 public class ImageDownloader {
-    
     public static let shared = ImageDownloader()
-    
+
     private init() {}
-    
+
     public func downloadImage(from url: URL, completion: @escaping (Result<UIImage, Error>) -> Void) {
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error {
                 completion(.failure(error))
                 return

@@ -1,6 +1,6 @@
 //
 //  UIRefreshControlExtensions.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/2/17.
 //
@@ -9,7 +9,6 @@ import UIKit
 
 @objc
 public extension UIRefreshControl {
-    
     /// SwifterSwift: Programmatically begin refresh control inside of UITableView
     ///
     /// - Parameters:
@@ -37,7 +36,7 @@ public extension UIRefreshControl {
     func beginRefreshing(animated: Bool, sendAction: Bool = false) {
         // https://stackoverflow.com/questions/14718850/14719658#14719658
         guard let scrollView = superview as? UIScrollView else {
-            assert(false, "Refresh control does not belong to a scroll view")
+            assertionFailure("Refresh control does not belong to a scroll view")
             return
         }
 

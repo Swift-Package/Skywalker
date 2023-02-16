@@ -1,6 +1,6 @@
 //
 //  SecureStoreError.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/9/23.
 //
@@ -14,14 +14,13 @@ public enum SecureStoreError: Error {
 }
 
 extension SecureStoreError: LocalizedError {
-    
     public var errorDescription: String? {
         switch self {
         case .string2DataConversionError:
             return NSLocalizedString("String to Data conversion error", comment: "")
         case .data2StringConversionError:
             return NSLocalizedString("Data to String conversion error", comment: "")
-        case .unhandledError(let message):
+        case let .unhandledError(message):
             return NSLocalizedString(message, comment: "")
         }
     }

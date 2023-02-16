@@ -1,6 +1,6 @@
 //
 //  RomanNumeralConverter.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/2/21.
 //
@@ -9,7 +9,6 @@ import Foundation
 
 @objcMembers
 public class RomanNumeralConverter: NSObject {
-    
     /// 将Int转换为罗马数字表示的字符串
     /// - Parameter number: 需要转换的数值
     /// - Returns: 需要转换的数值的罗马数字字符串表示
@@ -31,7 +30,7 @@ public class RomanNumeralConverter: NSObject {
              (5, "V"),
              (4, "IV"),
              (1, "I")]
-      
+
         for item in numberSymbols {
             while localNumber >= item.number {
                 result += item.symbol

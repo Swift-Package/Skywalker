@@ -1,6 +1,6 @@
 //
 //  UIViewInstantiate.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/3/24.
 //
@@ -9,11 +9,10 @@ import UIKit
 
 @objc
 public extension UIView {
-    
     class func loadFromNib(named name: String, bundle: Bundle? = nil) -> UIView? {
         return UINib(nibName: name, bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as? UIView
     }
-    
+
     /// 从Nib实例化视图
     /// - Parameters:
     ///   - name: UIView类或者子类

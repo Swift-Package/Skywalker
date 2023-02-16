@@ -1,6 +1,6 @@
 //
 //  ColorHex.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/5/10.
 //
@@ -8,13 +8,11 @@
 import SwiftUI
 
 public extension Color {
-    
     init(hex: UInt, alpha: Double = 1) {
         self.init(.sRGB,
-                red: Double((hex >> 16) & 0xff) / 255,
-                green: Double((hex >> 08) & 0xff) / 255,
-                blue: Double((hex >> 00) & 0xff) / 255,
-                opacity: alpha
-            )
+                  red: Double((hex >> 16) & 0xFF) / 255,
+                  green: Double((hex >> 08) & 0xFF) / 255,
+                  blue: Double((hex >> 00) & 0xFF) / 255,
+                  opacity: alpha)
     }
 }

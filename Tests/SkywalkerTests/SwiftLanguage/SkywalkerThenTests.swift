@@ -1,12 +1,12 @@
 //
 //  SkywalkerThenTests.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/2/17.
 //
 
-import XCTest
 @testable import Skywalker
+import XCTest
 
 struct User {
     var name: String?
@@ -16,8 +16,8 @@ struct User {
 extension User: Then {}
 
 class SkywalkerThenTests: XCTestCase {
-    
     // MARK: - 非引用型使用with
+
     func testWith() {
         let user = User().with { make in
             make.name = "devxoul"
@@ -26,8 +26,9 @@ class SkywalkerThenTests: XCTestCase {
         XCTAssertEqual(user.name, "devxoul")
         XCTAssertEqual(user.email, "devxoul@gmail.com")
     }
-    
+
     // MARK: - 所有NSObject子类使用then
+
     func testThen_NSObject() {
         let queue = OperationQueue().then { make in
             make.name = "awesome"
@@ -36,7 +37,7 @@ class SkywalkerThenTests: XCTestCase {
         XCTAssertEqual(queue.name, "awesome")
         XCTAssertEqual(queue.maxConcurrentOperationCount, 5)
     }
-    
+
     func testDo() {
         UserDefaults.standard.do {
             $0.removeObject(forKey: "username")
@@ -45,27 +46,28 @@ class SkywalkerThenTests: XCTestCase {
         }
         XCTAssertEqual(UserDefaults.standard.string(forKey: "username"), "devxoul")
     }
-    
+
     func testWith_Array() {
         let array = [1, 2, 3].with { $0.append(4) }
         XCTAssertEqual(array, [1, 2, 3, 4])
     }
-    
+
     func testWith_Dictionary() {
         let dict = ["Korea": "Seoul", "Japan": "Tokyo"].with {
             $0["China"] = "Beijing"
         }
         XCTAssertEqual(dict, ["Korea": "Seoul", "Japan": "Tokyo", "China": "Beijing"])
     }
-    
+
     func testWith_Set() {
         let set = Set(["A", "B", "C"]).with {
             $0.insert("D")
         }
         XCTAssertEqual(set, Set(["A", "B", "C", "D"]))
     }
-    
+
     // MARK: - 测试错误rethrows
+
     func testRethrows() {
         XCTAssertThrowsError(
             try NSObject().do { _ in

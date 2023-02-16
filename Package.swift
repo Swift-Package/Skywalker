@@ -12,7 +12,11 @@ let package = Package(
         // MARK: - 纯Objective-C库
         .library(name: "SkywalkerOC", targets: ["SkywalkerOC"]),
     ],
-    dependencies: [],
+    // MARK: - 包依赖列表
+    dependencies: [
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", branch: "master"),// 代码格式化工具 - 在Skywalker上下文菜单中使用SwiftFormatPlugin
+    ],
+    // MARK: - 目标列表
     targets: [
         // MARK: - 纯Swift目标 - 依赖纯Objective-C目标以复用Objective-C代码
         .target(name: "Skywalker", dependencies: ["SkywalkerOC"],
@@ -23,9 +27,9 @@ let package = Package(
                 swiftSettings: [
                     .define("PACKAGECONFIGURATION_DEBUG", .when(configuration: .debug)),
                     .define("PACKAGECONFIGURATION_RELEASE", .when(configuration: .release)),
-                    //.unsafeFlags(["-suppress-warnings"]),// 压制编译警告
+                    // .unsafeFlags(["-suppress-warnings"]),// 压制所有编译警告
                 ]
-                //linkerSettings: [.linkedFramework("CFNetwork", .when(platforms: [.iOS], configuration: nil))]
+                // linkerSettings: [.linkedFramework("CFNetwork", .when(platforms: [.iOS], configuration: nil))]
                ),
         
         // MARK: - 纯Objective-C目标
@@ -34,7 +38,7 @@ let package = Package(
                 resources: [],
                 publicHeadersPath: "",
                 cSettings: []),
-                //cSettings: [.unsafeFlags(["-w"])]), // 压制所有编译警告
+                // cSettings: [.unsafeFlags(["-w"])]),// 压制所有编译警告
         
         // MARK: - 纯Swift测试目标用来测试两个库
         .testTarget(name: "SkywalkerTests", dependencies: ["Skywalker"],

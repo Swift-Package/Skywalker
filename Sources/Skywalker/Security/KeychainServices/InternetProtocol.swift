@@ -1,6 +1,6 @@
 //
 //  InternetProtocol.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2022/9/23.
 //
@@ -10,7 +10,7 @@ import Foundation
 /// 表示您可以处理的所有可能的 Internet 协议值
 public enum InternetProtocol: RawRepresentable {
     case ftp, ftpAccount, http, irc, nntp, pop3, smtp, socks, imap, ldap, appleTalk, afp, telnet, ssh, ftps, https, httpProxy, httpsProxy, ftpProxy, smb, rtsp, rtspProxy, daap, eppc, ipp, nntps, ldaps, telnetS, imaps, ircs, pop3S
-    
+
     public init?(rawValue: String) {
         switch rawValue {
         case String(kSecAttrProtocolFTP):
@@ -79,7 +79,7 @@ public enum InternetProtocol: RawRepresentable {
             self = .http
         }
     }
-    
+
     public var rawValue: String {
         switch self {
         case .ftp:

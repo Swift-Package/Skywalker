@@ -1,6 +1,6 @@
 //
 //  StringOptional.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2023/1/6.
 //
@@ -10,11 +10,10 @@
 import Foundation
 
 public extension String? {
-    
     var orEmpty: String {
         self ?? ""
     }
-    
+
     var isNilOrEmpty: Bool {
         self == nil || self == ""
     }

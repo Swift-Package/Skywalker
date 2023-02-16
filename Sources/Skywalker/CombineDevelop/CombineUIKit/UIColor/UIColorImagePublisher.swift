@@ -1,21 +1,20 @@
 //
 //  UIColorImagePublisher.swift
-//  
+//
 //
 //  Created by 杨俊艺 on 2023/2/13.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 extension UIColor: ImagePublisher {
-    
     public func imagePublisher() -> AnyPublisher<UIImage?, Never> {
         return Deferred<AnyPublisher<UIImage?, Never>> {
-            let rect = CGRect.init(x: 0, y: 0, width: 300, height: 300)
+            let rect = CGRect(x: 0, y: 0, width: 300, height: 300)
             UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
             self.setFill()
-            UIBezierPath.init(ovalIn: rect).fill()
+            UIBezierPath(ovalIn: rect).fill()
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return Just(image).eraseToAnyPublisher()
