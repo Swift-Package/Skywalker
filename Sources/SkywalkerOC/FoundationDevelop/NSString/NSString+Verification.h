@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 是否是空字符串或者是空白字符组成的字符串
 - (BOOL)isBlank;
 
+/// 是否是合法手机号
+/// - Parameter mobile: 手机号字符串
++ (BOOL)isValidateMobile:(NSString *)mobile;
+
 @end
 
 NS_ASSUME_NONNULL_END
