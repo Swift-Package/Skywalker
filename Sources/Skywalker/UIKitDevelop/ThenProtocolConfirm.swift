@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 
 @available(iOS 15.0, *)
 extension UIButton.Configuration: Then {}

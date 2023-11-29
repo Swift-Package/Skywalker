@@ -48,11 +48,13 @@ public extension UIViewController {
 
 public extension UIViewController {
     
+    @available(iOS, introduced: 12, deprecated: 13, obsoleted: 14, message: "iOS 13前的代码可以使用此扩展但不推荐使用,后续将移除!")
     class var rootTabBarController: UITabBarController? {
         guard let keyWindow = UIApplication.shared.keyWindow else { return nil }
         return keyWindow.rootViewController as? UITabBarController
     }
     
+    @available(iOS, introduced: 12, deprecated: 13, obsoleted: 14, message: "iOS 13前的代码可以使用此扩展但不推荐使用,后续将移除!")
     class var topMost: UIViewController? {
         guard let keyWindow = UIApplication.shared.keyWindow else { return nil }
         return self.topMost(of: keyWindow.rootViewController)

@@ -7,6 +7,7 @@
 
 @testable import Skywalker
 import XCTest
+import Then
 
 struct User {
     var name: String?

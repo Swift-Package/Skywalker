@@ -14,13 +14,14 @@ let package = Package(
     ],
     // MARK: - 包依赖列表(外部依赖-当前Package之外的依赖)
     dependencies: [
+        .package(url: "https://github.com/devxoul/Then", branch: "master"),
+        .package(url: "https://github.com/ReactiveX/RxSwift", branch: "main"),
         .package(url: "https://github.com/nicklockwood/SwiftFormat", branch: "master"),// 代码格式化工具 - 在Skywalker上下文菜单中使用SwiftFormatPlugin
-        .package(url: "https://github.com/ReactiveX/RxSwift", branch: "main")
     ],
     // MARK: - 目标列表
     targets: [
         // MARK: - 纯Swift目标 - 依赖纯Objective-C目标以复用Objective-C代码 dependencies当前Target依赖项
-        .target(name: "Skywalker", dependencies: [.target(name: "SkywalkerOC"), "RxSwift"], path: "Sources/Skywalker",
+        .target(name: "Skywalker", dependencies: [.target(name: "SkywalkerOC"), "Then", "RxSwift", .product(name: "RxCocoa", package: "RxSwift")], path: "Sources/Skywalker",
                 exclude: [],
                 resources: [
                     .copy("FoundationDevelop/Bundle/Projects.json")
@@ -35,8 +36,6 @@ let package = Package(
         
         // MARK: - 纯Objective-C目标
         .target(name: "SkywalkerOC", dependencies: [], path: "Sources/SkywalkerOC",
-                
-                
                 exclude: [],
                 resources: [],
                 publicHeadersPath: "",
