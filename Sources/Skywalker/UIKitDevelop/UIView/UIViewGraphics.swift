@@ -9,7 +9,7 @@ import UIKit
 
 @objc
 public extension UIView {
-    /// 截图
+    /// 截图(视图不能被旋转过)
     var screenshot: UIImage? {
         UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, 0)
         defer { UIGraphicsEndImageContext() }

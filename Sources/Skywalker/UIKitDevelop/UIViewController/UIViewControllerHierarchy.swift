@@ -45,3 +45,45 @@ public extension UIViewController {
         }
     }
 }
+
+public extension UIViewController {
+    
+    class var rootTabBarController: UITabBarController? {
+        guard let keyWindow = UIApplication.shared.keyWindow else { return nil }
+        return keyWindow.rootViewController as? UITabBarController
+    }
+    
+    class var topMost: UIViewController? {
+        guard let keyWindow = UIApplication.shared.keyWindow else { return nil }
+        return self.topMost(of: keyWindow.rootViewController)
+    }
+    
+    class func topMost(of viewController: UIViewController?) -> UIViewController? {
+        if let presentedViewController = viewController?.presentedViewController {
+            return self.topMost(of: presentedViewController)
+        }
+        
+        if let tabBarController = viewController as? UITabBarController,
+            let selectedViewController = tabBarController.selectedViewController {
+            return self.topMost(of: selectedViewController)
+        }
+        
+        if let navigationController = viewController as? UINavigationController,
+            let visibleViewController = navigationController.visibleViewController {
+            return self.topMost(of: visibleViewController)
+        }
+        
+        if let pageViewController = viewController as? UIPageViewController,
+            pageViewController.viewControllers?.count == 1 {
+            return self.topMost(of: pageViewController.viewControllers?.first)
+        }
+        
+        for subview in viewController?.view?.subviews ?? [] {
+            if let childViewController = subview.next as? UIViewController {
+                return self.topMost(of: childViewController)
+            }
+        }
+        
+        return viewController
+    }
+}

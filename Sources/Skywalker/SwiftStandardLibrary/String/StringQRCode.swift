@@ -12,7 +12,7 @@ public extension String {
     /// 生成二维码图片
     /// - Returns: 可能为nil的二维码图片
     func generateQRCodeImage() -> UIImage? {
-        let data = self.data(using: .ascii, allowLossyConversion: false)
+        let data = self.data(using: .utf8, allowLossyConversion: false) // 使用.ascii将使得带中文的字符串无法生成图片
         let filter = CIFilter(name: "CIQRCodeGenerator")
         filter?.setValue(data, forKey: "InputMessage")
 
@@ -26,7 +26,7 @@ public extension String {
     /// 生成条形码图片
     /// - Returns: 可能为nil的二维码图片
     func generateBarCodeImage() -> UIImage? {
-        let data = self.data(using: .ascii, allowLossyConversion: false)
+        let data = self.data(using: .utf8, allowLossyConversion: false) // 使用.ascii将使得带中文的字符串无法生成图片
         let filter = CIFilter(name: "CICode128BarcodeGenerator")
         filter?.setValue(data, forKey: "InputMessage")
 

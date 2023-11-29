@@ -23,4 +23,10 @@ final class CollectionSafeTests: XCTestCase {
             XCTAssertNil(array[safe: 4])
         }
     }
+
+    func testNilRemoved() throws {
+        let optionals = [1, 2, nil, 3, nil, 4]
+        XCTAssertEqual(optionals.nilValuesRemoved().count, 4)
+        XCTAssertEqual(optionals.nilValuesRemoved(), [1, 2, 3, 4])
+    }
 }

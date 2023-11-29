@@ -8,7 +8,13 @@
 @testable import Skywalker
 import XCTest
 
-private class Note: Codable {}
+class Note: Codable {
+    var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
+}
 
 private enum UserDefaultsDataSource {
     @UserDefault("is_first_launch", defaultValue: true)
@@ -31,5 +37,10 @@ class UserDefaultsWrapperTests: XCTestCase {
 
         XCTAssertNil(UserDefaultsDataSource.notes)
         XCTAssertNil(UserDefaults.standard.value(forKey: "notes"))
+        
+        UserDefaultsDataSource.notes = [Note.init(title: "cccc")]
+        
+        XCTAssertEqual(UserDefaultsDataSource.notes?.first?.title, "cccc")
+        
     }
 }
