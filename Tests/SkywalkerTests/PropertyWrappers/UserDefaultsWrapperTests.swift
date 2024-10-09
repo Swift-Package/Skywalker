@@ -10,7 +10,7 @@ import XCTest
 
 class Note: Codable {
     var title: String
-    
+
     init(title: String) {
         self.title = title
     }
@@ -37,10 +37,9 @@ class UserDefaultsWrapperTests: XCTestCase {
 
         XCTAssertNil(UserDefaultsDataSource.notes)
         XCTAssertNil(UserDefaults.standard.value(forKey: "notes"))
-        
-        UserDefaultsDataSource.notes = [Note.init(title: "cccc")]
-        
+
+        UserDefaultsDataSource.notes = [Note(title: "cccc")]
+
         XCTAssertEqual(UserDefaultsDataSource.notes?.first?.title, "cccc")
-        
     }
 }

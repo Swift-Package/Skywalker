@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-extension NWInterface.InterfaceType: CaseIterable {
+extension NWInterface.InterfaceType: @retroactive CaseIterable {
     public static var allCases: [NWInterface.InterfaceType] = [.other, .wifi, .cellular, .loopback, .wiredEthernet]
 }
 

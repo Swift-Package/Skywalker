@@ -42,7 +42,7 @@ public extension UIStoryboard {
     }
 }
 
-protocol UIViewControllerCreatable { }
+protocol UIViewControllerCreatable {}
 
 extension UIViewControllerCreatable where Self: UIViewController {
     static func create(of storyboard: Storyboard) -> Self {
@@ -50,6 +50,6 @@ extension UIViewControllerCreatable where Self: UIViewController {
     }
 }
 
-extension UIViewController: UIViewControllerCreatable { }
+extension UIViewController: UIViewControllerCreatable {}
 
 // let viewController = MainViewController.create(of: .main)

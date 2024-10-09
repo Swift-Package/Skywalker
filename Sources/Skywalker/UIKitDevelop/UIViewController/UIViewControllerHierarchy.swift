@@ -47,45 +47,47 @@ public extension UIViewController {
 }
 
 public extension UIViewController {
-    
     @available(iOS, introduced: 12, deprecated: 13, obsoleted: 14, message: "iOS 13前的代码可以使用此扩展但不推荐使用,后续将移除!")
     class var rootTabBarController: UITabBarController? {
         guard let keyWindow = UIApplication.shared.keyWindow else { return nil }
         return keyWindow.rootViewController as? UITabBarController
     }
-    
+
     @available(iOS, introduced: 12, deprecated: 13, obsoleted: 14, message: "iOS 13前的代码可以使用此扩展但不推荐使用,后续将移除!")
     class var topMost: UIViewController? {
         guard let keyWindow = UIApplication.shared.keyWindow else { return nil }
         return self.topMost(of: keyWindow.rootViewController)
     }
-    
+
     class func topMost(of viewController: UIViewController?) -> UIViewController? {
         if let presentedViewController = viewController?.presentedViewController {
-            return self.topMost(of: presentedViewController)
+            return topMost(of: presentedViewController)
         }
-        
+
         if let tabBarController = viewController as? UITabBarController,
-            let selectedViewController = tabBarController.selectedViewController {
-            return self.topMost(of: selectedViewController)
+           let selectedViewController = tabBarController.selectedViewController
+        {
+            return topMost(of: selectedViewController)
         }
-        
+
         if let navigationController = viewController as? UINavigationController,
-            let visibleViewController = navigationController.visibleViewController {
-            return self.topMost(of: visibleViewController)
+           let visibleViewController = navigationController.visibleViewController
+        {
+            return topMost(of: visibleViewController)
         }
-        
+
         if let pageViewController = viewController as? UIPageViewController,
-            pageViewController.viewControllers?.count == 1 {
-            return self.topMost(of: pageViewController.viewControllers?.first)
+           pageViewController.viewControllers?.count == 1
+        {
+            return topMost(of: pageViewController.viewControllers?.first)
         }
-        
+
         for subview in viewController?.view?.subviews ?? [] {
             if let childViewController = subview.next as? UIViewController {
-                return self.topMost(of: childViewController)
+                return topMost(of: childViewController)
             }
         }
-        
+
         return viewController
     }
 }

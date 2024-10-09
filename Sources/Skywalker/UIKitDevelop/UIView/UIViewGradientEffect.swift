@@ -12,8 +12,7 @@ public protocol GradientEffect {
 }
 
 extension UIView: GradientEffect {
-
-    private struct LayerKey {
+    private enum LayerKey {
         static let gradientEffectEnabled = "gradientEffectEnabled"
     }
 
@@ -30,7 +29,6 @@ extension UIView: GradientEffect {
 }
 
 public extension GradientEffect where Self: UIView {
-
     func setGradientView() {
         let gradientView = UIView(frame: bounds)
         let gradient = CAGradientLayer()

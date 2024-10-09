@@ -9,7 +9,6 @@
 import UIKit
 
 public class ISImageView: UIImageView {
-    
     @IBInspectable public var isInteractable: Bool = false {
         didSet {
             guard oldValue != isInteractable else { return }
@@ -25,19 +24,19 @@ public class ISImageView: UIImageView {
             }
         }
     }
-    
+
     private var isPinching = false
     private var pinchGesture: UIPinchGestureRecognizer?
     private var panGesture: UIPanGestureRecognizer?
     private var originalCenter: CGPoint?
-    
+
     private func setupGesture() {
         pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchGesture(sender:)))
         pinchGesture?.delegate = self
         panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(sender:)))
         panGesture?.delegate = self
     }
-    
+
     private func cellForTarget(superview: UIView?) -> UIView? {
         guard superview != nil else { return nil }
         if superview is UITableViewCell || superview is UICollectionViewCell {
@@ -46,7 +45,7 @@ public class ISImageView: UIImageView {
             return cellForTarget(superview: superview?.superview)
         }
     }
-    
+
     @objc private func handlePinchGesture(sender: UIPinchGestureRecognizer) {
         switch sender.state {
         case .began:
@@ -68,7 +67,7 @@ public class ISImageView: UIImageView {
             break
         }
     }
-    
+
     @objc private func handlePanGesture(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began where isPinching:
@@ -76,13 +75,13 @@ public class ISImageView: UIImageView {
         case .changed where isPinching:
             guard let view = sender.view else { return }
             let translation = sender.translation(in: self)
-            view.center = CGPoint(x:view.center.x + translation.x, y:view.center.y + translation.y)
+            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
             sender.setTranslation(.zero, in: superview)
         default:
             break
         }
     }
-    
+
     private func reset() {
         UIView.animate(withDuration: 0.3, animations: {
             self.transform = .identity

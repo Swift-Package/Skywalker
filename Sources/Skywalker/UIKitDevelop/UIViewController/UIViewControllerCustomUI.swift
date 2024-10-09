@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 14.0, *)
 @objc
 public extension UIViewController {
     /// 自定义导航栏返回按钮图标

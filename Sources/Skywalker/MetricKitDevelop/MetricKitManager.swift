@@ -31,6 +31,7 @@ extension MetricKitManager: MXMetricManagerSubscriber {
         print("Skywalker \(firstPayload.dictionaryRepresentation())")
     }
 
+    @available(iOS 14.0, *)
     public func didReceive(_ payloads: [MXDiagnosticPayload]) {
         guard let firstPayload = payloads.first else { return }
         print("Skywalker \(firstPayload.dictionaryRepresentation())")
