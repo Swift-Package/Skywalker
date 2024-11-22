@@ -1,4 +1,4 @@
-// swift-tools-version:5.8
+// swift-tools-version:6.0
 
 import PackageDescription
 
@@ -27,9 +27,10 @@ let package = Package(
                     .copy("FoundationDevelop/Bundle/Projects.json")
                 ],
                 swiftSettings: [
+                    .swiftLanguageMode(.v5),
+                    // .unsafeFlags(["-suppress-warnings"]),// 压制所有编译警告
                     .define("PACKAGECONFIGURATION_DEBUG", .when(configuration: .debug)),
                     .define("PACKAGECONFIGURATION_RELEASE", .when(configuration: .release)),
-                    // .unsafeFlags(["-suppress-warnings"]),// 压制所有编译警告
                 ]
                 // linkerSettings: [.linkedFramework("CFNetwork", .when(platforms: [.iOS], configuration: nil))]
                ),
@@ -49,7 +50,9 @@ let package = Package(
                         .copy("Resources/Skywalker.png"),
                         .copy("FoundationDevelop/Bundle/WeatherbitExample.json"),
                    ],
-                   swiftSettings: []),
+                   swiftSettings: [
+                    .swiftLanguageMode(.v5)
+                   ]),
         
         // MARK: - 纯Objective-C测试目标用来测试两个库
         .testTarget(name: "SkywalkerOCTests", dependencies: ["Skywalker", "SkywalkerOC"],
@@ -57,6 +60,7 @@ let package = Package(
                     resources: [],
                     cSettings: []),
     ]
+    // swiftLanguageVersions: [.version("6"), .v5]
 )
 
 // 检查Skywalker返回nil的ObjeciveC扩展添加nullable

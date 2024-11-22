@@ -8,6 +8,7 @@
 import UIKit
 
 public extension UIImage {
+    // 该扩展来自WWDC21 认识Swift中的async/await
     @available(iOS 15.0, *)
     var thumbnail: UIImage? {
         get async {

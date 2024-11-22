@@ -9,11 +9,8 @@
 
 @implementation UIDevice (Language)
 
-/// 判断当前系统语言类型
+#pragma mark - 判断当前系统语言类型
 + (NSString *)currentLanguage {
-    // NSArray *allLanguages = [[NSUserDefaults standardUserDefaults] objectForKey:@"AppleLanguages"];
-    // NSString *preferredLang = [allLanguages objectAtIndex:0];
-    // return preferredLang;
     NSArray *allLanguages = [NSUserDefaults.standardUserDefaults objectForKey:@"AppleLanguages"];
     NSString *CURR_LANG = [allLanguages objectAtIndex:0];
     
@@ -29,7 +26,7 @@
     return CURR_LANG;
 }
 
-/// 判断当前系统语言是否为中文
+#pragma mark - 判断当前系统语言是否为中文
 + (BOOL)currentLanguageIsChinese {
     NSString *preferredLang = [UIDevice currentLanguage];
     return [preferredLang rangeOfString:@"zh"].location != NSNotFound;

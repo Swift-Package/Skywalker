@@ -11,10 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIDevice (Language)
 
-/// 判断当前系统语言类型
+#pragma mark - 判断当前系统语言类型
 + (NSString *)currentLanguage;
 
-/// 判断当前系统语言是否为中文
+#pragma mark - 判断当前系统语言是否为中文
 + (BOOL)currentLanguageIsChinese;
 
 @end

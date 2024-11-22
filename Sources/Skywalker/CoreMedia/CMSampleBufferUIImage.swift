@@ -11,8 +11,7 @@ import AVFoundation
 import UIKit
 
 public extension CMSampleBuffer {
-    /// 从摄像头捕获设备回调的缓冲数据中提取出图片对象
-    /// - Returns: UIImage或nil
+    // MARK: - 从摄像头捕获设备回调的缓冲数据中提取出图片对象
     func convertToUIImageOrNil() -> UIImage? {
         if let pixelBuffer = CMSampleBufferGetImageBuffer(self) {
             let context = CIContext()

@@ -15,7 +15,7 @@ final class ArrayOpaqueTypesTests: XCTestCase {
         }
 
         XCTAssertTrue(ss.contains(where: { element in
-            element as! Int == 2
+            element as! Int == 5
         }))
     }
 }
